@@ -141,28 +141,34 @@ function CinematicBackdrop() {
     mass: 0.13,
     restDelta: 0.0001,
   });
+  const starProgress = useSpring(scrollYProgress, {
+    stiffness: 320,
+    damping: 42,
+    mass: 0.08,
+    restDelta: 0.0001,
+  });
 
   const moonY = useTransform(sceneProgress, [0, 0.2, 0.58, 1], [0, -62, -230, -450]);
   const moonX = useTransform(sceneProgress, [0, 1], [0, -98]);
   const moonScale = useTransform(sceneProgress, [0, 0.24, 0.62, 1], [1.06, 0.95, 0.76, 0.5]);
   const moonOpacity = useTransform(sceneProgress, [0, 0.68, 1], [0.96, 0.82, 0.58]);
 
-  const farStarsY = useTransform(sceneProgress, [0, 1], [0, 150]);
-  const farStarsScale = useTransform(sceneProgress, [0, 1], [1, 1.16]);
-  const nearStarsY = useTransform(sceneProgress, [0, 1], [0, 230]);
-  const nearStarsScale = useTransform(sceneProgress, [0, 0.7, 1], [1, 0.86, 0.68]);
-  const nearStarsOpacity = useTransform(sceneProgress, [0, 0.72, 1], [0.62, 0.9, 0.46]);
-  const streamY = useTransform(sceneProgress, [0, 1], [0, 150]);
-  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.9, 0.78]);
-  const streamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.9, 0.66]);
-  const streamScaleY = useTransform(sceneProgress, [0, 0.58, 1], [1, 1.68, 2.45]);
-  const streamOpacity = useTransform(sceneProgress, [0, 0.18, 0.82, 1], [0.3, 0.72, 0.95, 0.92]);
-  const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 190]);
-  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.88, 0.74]);
-  const coreStreamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.82, 0.54]);
-  const coreStreamScaleY = useTransform(sceneProgress, [0, 0.54, 1], [1, 1.86, 2.85]);
-  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.16, 0.78, 1], [0.22, 0.72, 0.98, 0.96]);
-  const twinkleOpacity = useTransform(sceneProgress, [0, 0.45, 1], [0.5, 0.92, 0.32]);
+  const farStarsY = useTransform(starProgress, [0, 1], [0, 185]);
+  const farStarsScale = useTransform(starProgress, [0, 1], [1, 1.18]);
+  const nearStarsY = useTransform(starProgress, [0, 1], [0, 290]);
+  const nearStarsScale = useTransform(starProgress, [0, 0.7, 1], [1, 0.88, 0.7]);
+  const nearStarsOpacity = useTransform(starProgress, [0, 0.72, 1], [0.62, 0.9, 0.52]);
+  const streamY = useTransform(starProgress, [0, 1], [0, 190]);
+  const streamScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.92, 0.8]);
+  const streamScaleX = useTransform(starProgress, [0, 0.76, 1], [1, 0.9, 0.68]);
+  const streamScaleY = useTransform(starProgress, [0, 0.58, 1], [1, 1.74, 2.55]);
+  const streamOpacity = useTransform(starProgress, [0, 0.18, 0.82, 1], [0.3, 0.72, 0.96, 0.94]);
+  const coreStreamY = useTransform(starProgress, [0, 1], [0, 230]);
+  const coreStreamScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.9, 0.76]);
+  const coreStreamScaleX = useTransform(starProgress, [0, 0.76, 1], [1, 0.82, 0.56]);
+  const coreStreamScaleY = useTransform(starProgress, [0, 0.54, 1], [1, 1.94, 2.95]);
+  const coreStreamOpacity = useTransform(starProgress, [0, 0.16, 0.78, 1], [0.22, 0.72, 0.98, 0.97]);
+  const twinkleOpacity = useTransform(starProgress, [0, 0.45, 1], [0.5, 0.92, 0.38]);
 
   const lensOpacity = useTransform(sceneProgress, [0.02, 0.24, 0.84, 1], [0.12, 0.58, 0.92, 1]);
   const lensY = useTransform(sceneProgress, [0, 1], [360, -80]);
