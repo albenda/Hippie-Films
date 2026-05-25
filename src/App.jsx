@@ -15,7 +15,7 @@ import {
   Sparkles,
   Youtube,
 } from 'lucide-react';
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { defaultLanguage, languages, localizedContent, sharedBrand } from './data/brandContent';
 
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
@@ -135,12 +135,17 @@ function LinkButton({ item, language, compact = false }) {
 function CinematicBackdrop() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const sceneProgress = scrollYProgress;
+  const sceneProgress = useSpring(scrollYProgress, {
+    stiffness: 118,
+    damping: 26,
+    mass: 0.3,
+    restDelta: 0.0005,
+  });
 
-  const moonY = useTransform(sceneProgress, [0, 0.46, 1], [0, -210, -510]);
-  const moonX = useTransform(sceneProgress, [0, 1], [0, -118]);
-  const moonScale = useTransform(sceneProgress, [0, 0.56, 1], [1.08, 0.76, 0.42]);
-  const moonOpacity = useTransform(sceneProgress, [0, 0.7, 1], [0.96, 0.74, 0.52]);
+  const moonY = useTransform(sceneProgress, [0, 0.2, 0.58, 1], [0, -62, -230, -450]);
+  const moonX = useTransform(sceneProgress, [0, 1], [0, -98]);
+  const moonScale = useTransform(sceneProgress, [0, 0.24, 0.62, 1], [1.06, 0.95, 0.76, 0.5]);
+  const moonOpacity = useTransform(sceneProgress, [0, 0.68, 1], [0.96, 0.82, 0.58]);
 
   const farStarsY = useTransform(sceneProgress, [0, 1], [0, 220]);
   const farStarsScale = useTransform(sceneProgress, [0, 1], [1, 1.16]);
