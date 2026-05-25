@@ -1,0 +1,30 @@
+QA Checklist Template
+
+Area:
+Date:
+Tester:
+
+Devices/browsers:
+- 
+
+Scenarios:
+- 
+
+Regression checks:
+- 
+
+Accessibility:
+- touch targets
+- keyboard/focus
+- contrast
+- screen reader labels
+
+Mobile:
+- safe area
+- bottom nav
+- scroll
+- modals/sheets
+
+Result:
+
+Open issues:

@@ -1,0 +1,32 @@
+CalendarOps Protocol
+
+מתי להפעיל:
+- משימה עם תאריך.
+- roadmap.
+- launch.
+- follow-up.
+- meeting.
+- capacity.
+- Google Calendar.
+
+כללים:
+1. לא לבצע bulk calendar changes בלי dry-run ואישור.
+2. לא להזיז milestone חשוב בלי reason ו-Impact Sync.
+3. כל משימה ביומן צריכה:
+   owner
+   done_when
+   source
+   department
+   status
+4. אם יש ימי מנוחה/חגים/אילוצי עבודה — לתעד בפרויקט החדש.
+5. לשמור על יציבות. לא להזיז תאריכים כל יום בלי סיבה.
+
+Dry-run format:
+- Event title:
+- Calendar:
+- Date/time:
+- Owner:
+- Source:
+- Why needed:
+- What changed from previous plan:
+- Approval needed: yes/no

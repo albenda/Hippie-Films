@@ -1,0 +1,62 @@
+{
+  "updated_at": "2026-05-25 Asia/Jerusalem",
+  "project": {
+    "name": "Hippie Films × Sanpaku",
+    "owner": "Tal Ben David",
+    "domain": "creative visual brand QR landing page and mini portfolio",
+    "active_source": "/Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Hippie Films",
+    "stage": "build",
+    "primary_user": "QR visitors, creative clients, collaborators, and Tal"
+  },
+  "current_focus": [
+    "Production-ready mobile-first QR landing page for Hippie Films × Sanpaku",
+    "Project OS installed and customized for future agent work",
+    "Manager system assigned to every project layer",
+    "Restyle the landing page to match the supplied black/star/gold business card"
+  ],
+  "critical_open_items": [
+    "Confirm phone from supplied card is final: 058-69-22222",
+    "Confirm email from supplied card is final: Hippiefilmspro@gmail.com",
+    "Add final website / portfolio link if it exists",
+    "Generate real QR only after deployment URL is known",
+    "Decide English only vs Hebrew + English",
+    "Add final logo/profile image if available"
+  ],
+  "hard_stops": [
+    "Do not publish or deploy without explicit approval",
+    "Do not use HippieFilms.in, @hippiefilms.in, Indian phone numbers, Indian emails, or unrelated business details",
+    "Do not replace or enrich contact data with guessed personal data",
+    "Do not generate a final QR before the public URL exists"
+  ],
+  "source_of_truth_order": [
+    "Current local project files",
+    "AGENTS.md and 00_project_management",
+    "Explicit owner instructions in the active conversation",
+    "Public brand links supplied by the owner",
+    "Live deployed site after approval"
+  ],
+  "manager_system": {
+    "status": "installed_and_customized",
+    "managers_enabled": [
+      "Chief of Staff",
+      "ProductOps",
+      "Design / UX",
+      "DesignOps",
+      "Engineering",
+      "QA / Release",
+      "KnowledgeOps"
+    ],
+    "skills_enabled": [
+      "project-manager-os",
+      "project-owner-language-model",
+      "project-deep-research-sync",
+      "project-rebuild-mode",
+      "project-designops-gate",
+      "project-release-safety-gate",
+      "project-decision-knowledge-ops",
+      "project-agent-safety-gate",
+      "project-supportops-system"
+    ],
+    "next_step": "Finish the black/star/gold visual restyle, then run mobile/browser QA."
+  }
+}

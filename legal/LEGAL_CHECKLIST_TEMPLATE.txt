@@ -1,0 +1,22 @@
+Legal / Privacy Checklist
+
+Use when a task touches:
+- personal data
+- health data
+- location
+- payments
+- user-generated content
+- children/minors
+- suppliers/contracts
+- public sharing
+- deletion/export
+
+Questions:
+1. What data is collected?
+2. Why is it needed?
+3. Where is it stored?
+4. Who can access it?
+5. Is consent needed?
+6. Does copy/UI make a legal claim?
+7. Are Terms/Privacy/Support docs affected?
+8. Is owner approval required?

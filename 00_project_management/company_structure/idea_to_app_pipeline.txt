@@ -1,0 +1,121 @@
+Idea To App Pipeline
+
+Status: mandatory for meaningful product, feature, UX, UI, flow, or release work.
+
+Purpose:
+Prevent good ideas from reaching code/release before product, UX, design, engineering, QA, and knowledge layers are ready.
+
+Principle:
+Code is not the first step.
+Deploy is not design review.
+Release is not where quality problems should be discovered.
+
+Mandatory order:
+
+0. Intake
+Owner: Chief of Staff
+Output:
+- idea summary
+- mode: Patch / Polish / Rebuild / System / Safety
+- DACI
+- scope
+- hard stops
+- must_not_touch
+
+1. Product Gate
+Owner: ProductOps
+Output:
+- problem
+- user story
+- desired outcome
+- non-goals
+- acceptance criteria
+- Keep / Remove / Merge / Move / Rename / Redesign decisions when relevant
+
+Do not continue if:
+- why/what is unclear
+- there is duplication with another flow and no decision
+- success criteria are missing
+
+2. UX Gate
+Owner: UX Lead
+Output:
+- flow before/after
+- navigation and return paths
+- CTA list and exact destination/action
+- empty/loading/error/full states
+- mobile/safe-area/accessibility constraints
+
+Do not continue if:
+- controls look like internal tabs but navigate elsewhere without clarity
+- CTAs are vague
+- empty states are missing
+
+3. Visual / DesignOps Gate
+Owner: Design / Visual / DesignOps
+Output:
+- visual direction
+- brand/tokens check
+- card hierarchy
+- CTA hierarchy
+- consistency with adjacent screens
+- before/after product difference
+- explicit status: Design Gate passed OR Design risk accepted by owner
+
+Do not continue to implementation if:
+- the result still looks like the old screen with nicer boxes after a rebuild request
+- it does not feel like the product
+- design status is missing
+
+4. Technical Architecture Gate
+Owner: Engineering
+Output:
+- files/components affected
+- data sources/APIs/entities affected
+- risks
+- reusable components/patterns
+- validation plan
+
+Do not continue if:
+- permissions/schema/billing/legal/destructive data are needed without approval
+- spec requires hacks that will create recurring fixes
+
+5. Implementation Gate
+Owner: Engineering
+Output:
+- scoped implementation according to approved gates
+- if spec breaks during implementation, stop and return to the right gate
+
+6. Validation Gate
+Owner: QA / Release
+Output:
+- tests/lint/build or not applicable
+- manual QA checklist
+- mobile/browser notes
+- Impact Sync
+- release/apply/deploy target
+
+7. Deploy / Apply Gate
+Owner: Release
+Output:
+- deploy/apply status
+- no publish/release without explicit approval when configured as hard stop
+
+8. Post-Deploy Review
+Owner: Product + Design + QA
+Output:
+- does it match intent?
+- does it work?
+- regressions?
+- open fixes before publish/release?
+
+9. Knowledge Gate
+Owner: KnowledgeOps
+Output:
+- task board update
+- interaction log
+- decision log if meaningful
+- current project state if meaningful
+
+Patch shortcut:
+Tiny patches may skip full Product/Design gates, but still need scope, validation, Impact Sync, and clear closeout.

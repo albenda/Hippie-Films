@@ -1,0 +1,35 @@
+Decision and KnowledgeOps Protocol
+
+מטרה:
+לא להשאיר החלטות חשובות בתוך שיחה בלבד.
+
+מתי לרשום החלטה:
+- שינוי כיוון מוצר.
+- שינוי מחיר/מודל עסקי.
+- החלטה משפטית או פרטיות.
+- שינוי מערכת עבודה.
+- הכרעה בין מקורות אמת.
+- לקח חוזר אחרי טעות.
+
+Decision log fields:
+- timestamp
+- decision_id
+- area
+- decision
+- rationale
+- owner
+- approver
+- source_of_truth
+- impacted_layers
+- docs_updated
+- review_date
+- status
+
+סתירות:
+אם נמצאה סתירה, לכתוב:
+"Found a contradiction between X and Y"
+
+אחר כך:
+1. להמליץ על מקור האמת לפי סדר העדיפות.
+2. לעצור לאישור אם זה כסף/משפט/פרטיות/דאטה/פרסום.
+3. לעדכן decision_log.tsv אחרי ההכרעה.

@@ -1,0 +1,37 @@
+Quality Bar Protocol
+
+כל משימה משמעותית חייבת לעבור:
+
+1. Evidence
+- מה נקרא בפועל?
+- אילו קבצים/מקורות?
+- האם היה צורך באינטרנט?
+
+2. Owner Intent
+- מה הבעלים באמת ביקש?
+- האם זו בקשת Patch/Polish/Rebuild/System/Safety?
+
+3. Completeness
+- האם טופלו כל החלקים הרלוונטיים?
+- האם יש נקודות שנשארו פתוחות?
+- אם UI/UX משמעותי: האם Product Gate, UX Gate ו-Design Gate עברו?
+
+4. Validation
+- אילו בדיקות רצו?
+- מה לא נבדק?
+
+5. Impact
+- מי עוד מושפע?
+- אילו docs/tasks/decisions עודכנו?
+
+6. Release
+- האם נדרש deploy/apply/publish?
+- האם יש אישור?
+- אם UI השתנה: האם Design Gate passed או Design risk accepted by owner?
+
+7. Closeout
+- changed files
+- validation
+- impact sync
+- manual QA
+- open items

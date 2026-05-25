@@ -1,0 +1,29 @@
+Product Brief Template
+
+Feature / Area:
+Owner:
+Date:
+
+Problem:
+
+User:
+
+Current behavior:
+
+Desired behavior:
+
+Non-goals:
+
+Success metrics:
+
+Risks:
+
+Affected screens/files:
+
+Data dependencies:
+
+Support implications:
+
+Legal/privacy implications:
+
+Done when:

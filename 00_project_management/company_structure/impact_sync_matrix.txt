@@ -1,0 +1,42 @@
+Impact Sync Matrix
+
+לפני סגירת כל משימה משמעותית, בדוק:
+
+1. Product / UX
+- האם המסלול עדיין ברור?
+- האם השינוי משנה היררכיה, CTA, empty state או onboarding?
+
+2. Engineering
+- אילו קבצים השתנו?
+- אילו hooks/entities/APIs מושפעים?
+- אילו בדיקות רצו?
+
+3. Data / Storage
+- האם יש schema, permissions, records, cache, migrations?
+
+4. Legal / Privacy / Trust
+- האם יש מידע אישי, תשלום, מיקום, ילדים, בריאות, חיות, זכויות?
+
+5. Billing / Pricing
+- האם מחיר, מסלול, הגבלה, חשבונית או claim שיווקי השתנו?
+
+6. Business / Strategy
+- האם התחזיות, roadmap, pitch או partner docs מושפעים?
+
+7. Support / Customer Operations
+- האם FAQ, מאקרו, תסריטי תמיכה או help center צריכים עדכון?
+
+8. Calendar / Roadmap
+- האם תאריך, deadline, launch milestone או follow-up השתנה?
+
+9. Knowledge / Decisions
+- האם יש החלטה משמעותית שצריך לרשום?
+- האם יש סתירה בין מקורות אמת?
+
+10. Release / QA
+- מה צריך לבדוק ידנית?
+- האם deploy/publish/apply נדרש?
+- מה לא נבדק?
+
+סגירה:
+Impact Sync: נבדקו השפעות על X/Y/Z. עודכן A/B. לא עודכן C כי לא רלוונטי.

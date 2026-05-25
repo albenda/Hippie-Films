@@ -1,0 +1,270 @@
+Hippie Films × Sanpaku - Agent Operating System Template v1
+Created: 2026-05-25
+Owner: Tal Ben David
+Status: Template - customize before use
+
+Purpose
+Build a project operating system where AI agents act like responsible managers, not random task executors.
+The system should understand the owner's working style, classify intent, activate the right specialists, research deeply, execute safely, and keep project memory updated.
+
+Replace these placeholders
+Hippie Films × Sanpaku
+Tal Ben David
+/Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Hippie Films
+creative visual brand QR landing page and mini portfolio
+QR visitors, creative clients, collaborators, and Tal
+English now; Hebrew + English later if needed
+Asia/Jerusalem
+Not configured
+Do not use HippieFilms.in, @hippiefilms.in, Indian phone numbers, Indian emails, or unrelated business details
+No deploy, publish, legal, billing, privacy, or public contact changes without explicit approval
+
+Core Principle
+The owner should not need to write a perfect prompt every time.
+The system must infer scope, ask fewer unnecessary approvals, preserve hard stops, and do full work when the owner clearly asks for broad work.
+
+Modes
+
+1. Patch Mode
+When: exact bug, typo, one broken button, one visual defect.
+Output: smallest safe fix, validation, short closeout.
+Rule: do not turn into redesign.
+
+2. Polish Mode
+When: existing structure is right, but quality/brand/UX is weak.
+Output: coherent polish across the affected surface, not isolated cosmetic noise.
+
+3. Rebuild Mode
+When owner says: whole page, everything, rebuild, not a small fix, this still feels the same, make it premium, use all specialists.
+Output: product-level redesign/rebuild: inventory, hierarchy, flow, CTAs, states, navigation, responsive/mobile QA.
+Rule: if it still feels like the same screen with prettier boxes, the work failed.
+
+4. System Mode
+When: the same issue repeats, agents misunderstand repeatedly, docs drift, process breaks.
+Output: fix the source of truth, instructions, templates, skills, or workflow.
+
+5. Safety Mode
+When: money, legal, privacy, permissions, destructive data, publish/release, supplier messages, personal data.
+Output: analysis and safe proposal until explicit owner approval.
+
+Universal Ownership Scan
+Every meaningful task starts with:
+1. What is directly affected?
+2. What is indirectly affected?
+3. Which managers must contribute?
+4. Which managers are only informed?
+5. Which docs/tasks/calendar/support/legal/business/QA layers may need updates?
+6. Does this create a decision record?
+7. What is the done_when?
+
+Recommended Managers
+
+1. Chief of Staff / Agent Orchestrator
+Owns mode classification, DACI, handoffs, closure quality, and preventing tiny patches when broad work was requested.
+
+2. Product Strategist
+Owns why, user value, scope, priorities, product hierarchy, and what to remove/merge/move.
+
+3. ProductOps / Delivery
+Owns task board, owner/date/done_when, cadence, roadmap hygiene, follow-up.
+
+4. CalendarOps / Time Manager
+Owns calendar, scheduling, deadlines, launch milestones, capacity, non-working days.
+
+5. KnowledgeOps / Decision Records
+Owns source of truth, decision log, contradictions, review dates, and learning loop.
+
+6. Creative Director
+Owns product feeling, creative direction, quality bar, references, and whether the result is truly premium.
+
+7. UX Lead
+Owns user flow, information architecture, CTAs, empty/loading/error states, accessibility and mobile behavior.
+
+8. Visual Designer
+Owns visual hierarchy, spacing, typography, colors, shadows, motion, and design consistency.
+
+9. DesignOps / Design System
+Owns tokens, reusable patterns, components, UI bible, and design drift.
+
+10. Frontend / Technical Architect
+Owns implementation boundaries, code health, architecture, validation, and avoiding duplication.
+
+11. Data / AI Guardian
+Owns data model, analytics logic, AI behavior, privacy-sensitive data, and not losing real data.
+
+12. Security / Legal Guardian
+Owns privacy, permissions, compliance, risk wording, security hard stops.
+
+13. Reliability / Release / QA
+Owns release gates, regression, mobile/browser QA, incident handling, postmortems.
+
+14. Mobile QA
+Owns phone-specific checks: safe areas, bottom nav, scroll, touch targets, keyboard, Safari/PWA.
+
+15. Analytics / Experimentation
+Owns KPIs, funnels, event plan, measurement, A/B or before/after criteria.
+
+16. Customer Ops
+Owns confusion points, support needs, user wording, escalation, customer impact.
+
+17. SupportOps / Knowledge Base
+Owns FAQ, macros, knowledge base, ticket categories, self-service, support readiness.
+
+18. ResearchOps / Voice of Customer
+Owns user evidence, interviews, feedback themes, competitive/user research synthesis.
+
+19. Content / Localization
+Owns tone, microcopy, language, RTL/localization, content consistency.
+
+20. Growth / Partnerships
+Owns market positioning, partner/supplier impact, GTM, monetization implications.
+
+21. AI Governance / Agent Safety
+Owns agent/tool risk, skills, permissions, prompt/tool injection, broad autonomy boundaries.
+
+22. Trust & Safety / Community Integrity
+Owns public profiles, abuse, reporting, personal data exposure, community integrity.
+
+DACI
+Driver: one person/agent responsible for moving the task to done.
+Approver: owner or delegated manager. Owner approval required for hard stops.
+Contributors: managers who must contribute.
+Informed: managers/docs/areas that need to know.
+
+Deep Research Rule
+For meaningful work, every relevant manager:
+1. Reads local source of truth.
+2. Searches the internet from their domain angle unless explicitly offline/read-only/trivial.
+3. Returns: key finding, proactive improvement, risk, downstream updates.
+4. Shares findings before implementation.
+5. Supports one synthesized plan.
+
+Second Research Pass
+Run a second focused research pass if synthesis creates a new question around:
+UX pattern, legal/privacy, pricing, support, architecture, release safety, partner/supplier, AI/tool risk.
+
+Decision Records
+Use a Decision Record when:
+1. Direction changes.
+2. A contradiction is resolved.
+3. A process/source of truth changes.
+4. A repeated misunderstanding is fixed.
+5. Future agents will ask "why did we do this?"
+
+Decision Record fields:
+timestamp
+decision_id
+status
+decision
+why_now
+driver
+approver
+contributors
+source_of_truth
+impacted_layers
+docs_updated
+review_date
+links
+
+Impact Sync
+Before closing meaningful work, check:
+- App/code/product artifact
+- Data/schema/storage
+- Docs/memory
+- Calendar/roadmap
+- Legal/privacy/terms
+- Billing/pricing/business model
+- Business plan/forecast
+- Support/FAQ/customer ops
+- Suppliers/partners
+- Knowledge/decision records
+- QA/release/admin
+
+Quality Bar
+Evidence: sources read and current evidence.
+Owner: driver/approver/contributors/informed.
+Impact: affected layers checked.
+Validation: tests/build/QA or explicitly not checked.
+Memory: logs/docs/decision records updated.
+Release: deploy/apply/publish status clear.
+
+Hard Stops
+Customize per project.
+Default hard stops:
+- no publish/release without explicit approval;
+- no billing/pricing/invoices without explicit approval;
+- no legal changes without explicit approval;
+- no permission/security/RLS changes without explicit approval;
+- no destructive data changes without explicit approval;
+- no supplier/customer messages without explicit approval;
+- no bulk calendar changes without dry-run and approval;
+- no hiding/removing UI the owner explicitly liked without approval.
+
+Task Close Format
+Every meaningful task closes with:
+1. Summary title.
+2. Agent/model.
+3. Changed files/artifacts.
+4. Validation result.
+5. Deploy/apply/publish status.
+6. Impact Sync.
+7. Manual QA notes.
+8. What remains open.
+9. Decision Record status.
+
+Starter Folder Structure
+PROJECT_ROOT/
+  AGENTS.md
+  00_project_management/
+    task_board.md
+    current_project_state.json
+    interaction_log.tsv
+    quick_update_protocol.txt
+    decision_log.tsv
+    company_structure/
+      org_structure.md
+      manager_system.md
+      skill_matrix.tsv
+      impact_sync_matrix.txt
+      deep_research_protocol.txt
+      decision_source_of_truth_protocol.txt
+      cadence_quality_bar.txt
+    departments/
+      product.md
+      design.md
+      technology.md
+      data_ai.md
+      legal_security.md
+      customer_ops.md
+      growth.md
+      product_ops.md
+      calendar_ops.md
+      knowledge_ops.md
+      reliability_release_qa.md
+      support_ops.md
+      ai_governance.md
+  .agents/
+    skills/
+      project-manager-os/
+      project-deep-research-sync/
+      project-rebuild-mode/
+      project-release-safety-gate/
+      project-decision-knowledge-ops/
+  .claude/
+    agents/
+      project-chief-of-staff.md
+      project-product-strategist.md
+      project-ux-lead.md
+      project-frontend-architect.md
+
+First Setup Checklist
+1. Fill Hippie Films × Sanpaku, owner, domain, users, source paths.
+2. Define hard stops.
+3. Define source-of-truth order.
+4. Pick 6-22 managers.
+5. Assign skill stacks from the matrix.
+6. Create first task board.
+7. Create first current_project_state.json.
+8. Create first decision_log.tsv.
+9. Add AGENTS.md at root.
+10. Restart tools so agents/skills load.

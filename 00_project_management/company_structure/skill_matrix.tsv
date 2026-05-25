@@ -1,0 +1,23 @@
+manager_id	manager_name	when_to_use	recommended_skills	core_outputs
+1	chief-of-staff	Every cross-functional or unclear task; mode classification; agent routing	manager-os; deep-research-sync; rebuild-mode; release-safety-gate; agent-safety-gate; brief; change-request	Mode; DACI; handoff; closeout
+2	product-strategist	Product direction, strategy, scope, priorities, positioning	manager-os; rebuild-mode; product-brainstorming; knowledge-synthesis; competitive-intelligence; brief	Product thesis; what to keep/remove/merge; success metric
+3	product-ops	Task board, roadmap, owner/date/done_when, delivery cadence	change-request; close-management; capacity-plan; business-pulse; manager-os	Owner/date/done_when; follow-ups; delivery plan
+4	calendar-ops	Calendar, schedule, launch dates, capacity, no-work days	calendar-ops; capacity-plan; task-management; change-request; close-management	Dry-run calendar plan; milestone impact; schedule risks
+5	knowledge-decision-ops	Decision records, source of truth, contradictions, repeated misunderstandings	decision-knowledge-ops; knowledge-synthesis; research-synthesis; documentation; brief; close-management	Decision record; source map; contradiction resolution
+6	creative-director	High-level creative direction, quality bar, brand feeling	rebuild-mode; designops-gate; brand-review; design-critique; frontend-design	Creative direction; quality verdict; references
+7	ux-lead	Flows, navigation, IA, CTAs, empty/loading/error states	rebuild-mode; designops-gate; frontend-design; accessibility-review; rtl-best-practices	Flow map; states; CTA plan; usability risks
+8	visual-designer	Visual hierarchy, typography, spacing, color, motion	designops-gate; brand-review; design-system; frontend-design; design-critique	Visual system; component guidance; polish pass
+9	designops-system	Design system, tokens, components, pattern library	design-system; design-handoff; brand-review; frontend-design; designops-gate	Token/pattern updates; reusable components
+10	frontend-architect	Code architecture, implementation, boundaries, build/release readiness	architecture; code-review; frontend-design; release-safety-gate; rebuild-mode	Implementation plan; changed files; lint/build
+11	data-ai-guardian	Data model, AI behavior, analytics logic, privacy-sensitive data	analyze; agent-safety-gate; compliance-check; data-context-extractor	Data impact; AI/data risk; schema notes
+12	security-legal-guardian	Privacy, security, legal, permissions, compliance	compliance-check; legal-risk-assessment; privacy-shield; appsec-scanner; agent-safety-gate	Legal/security risk; approval needed
+13	reliability-release	Release gates, incidents, regression, postmortems	release-safety-gate; incident-response; testing-strategy; code-review; change-request	Release readiness; QA gate; incident notes
+14	mobile-qa	Mobile/browser/PWA/safe-area/touch QA	accessibility-review; testing-strategy; rtl-best-practices; designops-gate	Device checklist; screenshots/evidence; not-checked notes
+15	analytics-experiments	KPIs, funnels, measurement, experiments	build-dashboard; business-pulse; research-synthesis; analyze	Event plan; KPI; experiment hypothesis
+16	customer-ops	User confusion, support impact, customer language	customer-research; customer-pulse; ux-copy; supportops-system	Customer pain; support risk; wording improvements
+17	supportops-kb	FAQ, macros, knowledge base, escalation	customer-escalation; customer-pulse-check; content-writer; supportops-system	FAQ/macro updates; support readiness
+18	research-voice	User evidence, surveys, interviews, feedback themes	customer-research; research-synthesis; knowledge-synthesis; survey-builder	Research themes; evidence; opportunity list
+19	content-localization	Copy, tone, localization, RTL wording	ux-copy; content-writer; i18n; rtl-best-practices; legal-risk-assessment	Copy table; tone guide; localization risks
+20	growth-partnerships	GTM, competitors, partners, suppliers, monetization	campaign-plan; competitive-intelligence; product-launch; content-marketing; compose-outreach	Growth impact; partner/supplier notes; market risks
+21	ai-governance	Agent/tool safety, skills, MCP/plugins, prompt/tool risk	agent-development; skill-creator; agent-safety-gate; compliance-check	Tool risk; skill/agent updates; guardrails
+22	trust-safety-community	Public profiles, abuse, reporting, personal-data exposure	privacy-shield; broken-access-control-testing; sensitive-data-exposure-testing; compliance-check	Trust risk; abuse flow; privacy notes

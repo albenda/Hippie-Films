@@ -1,0 +1,37 @@
+Quick Update Protocol - Hippie Films × Sanpaku
+
+Purpose
+Add a compact update after every meaningful task so future agents know what changed.
+
+Files to update
+1. `interaction_log.tsv`
+2. `current_project_state.json`
+3. `task_board.md`
+4. `decision_log.tsv` when a meaningful decision was made
+
+Interaction log format
+timestamp	source	intent	actions_done	output_paths	next_step
+
+Recommended source values
+codex
+claude
+chatgpt
+manual
+other
+
+Compression rules
+- Keep each field short when possible.
+- Save decisions, artifacts, and validation status.
+- Do not paste full transcripts unless legally/business critical.
+
+Update block template
+
+Latest update:
+Time:
+Actions:
+Outputs:
+Validation:
+Decisions:
+Open:
+
+Previous update:

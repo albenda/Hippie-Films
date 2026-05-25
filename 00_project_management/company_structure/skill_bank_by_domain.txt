@@ -1,0 +1,142 @@
+Generic Skill Bank by Domain v1
+תאריך: 2026-05-25
+סטטוס: תבנית בחירה לפרויקטים חדשים
+
+הערה
+במכונה הזו נספרו 1166 skills זמינים בתיקיות המקומיות. לא נכון להעמיס את כולם על כל סוכן.
+הדרך הנכונה: לתת לכל מנהל 5-9 skills ממוקדים לפי תחום, ועוד skill אחד של מערכת ניהול/מחקר/בטיחות.
+
+Core operating skills
+- agent-development
+- skill-creator
+- dogo-manager-os -> להעתיק לפרויקט חדש בשם project-manager-os
+- dogo-deep-research-sync -> להעתיק לפרויקט חדש בשם project-deep-research-sync
+- dogo-rebuild-mode -> להעתיק לפרויקט חדש בשם project-rebuild-mode
+- dogo-release-safety-gate -> להעתיק לפרויקט חדש בשם project-release-safety-gate
+- dogo-decision-knowledge-ops -> להעתיק לפרויקט חדש בשם project-decision-knowledge-ops
+- change-request
+- close-management
+- brief
+- documentation
+- knowledge-synthesis
+- research-synthesis
+
+Product / Strategy
+- product-brainstorming
+- competitive-intelligence
+- competitive-brief
+- comp-analysis
+- business-pulse
+- campaign-plan
+- roadmap-update
+- capacity-plan
+- cash-flow-snapshot
+
+Design / UX
+- frontend-design
+- brand-review
+- brand-voice-enforcement
+- design-critique
+- design-system
+- design-handoff
+- accessibility-review
+- ux-copy
+- create-an-asset
+- create-viz
+- discover-brand
+
+Technology / Engineering
+- architecture
+- code-review
+- debug
+- deploy-checklist
+- configure
+- build-dashboard
+- build-mcp-app
+- build-mcp-server
+- github-actions-il
+
+Data / Analytics
+- analyze
+- explore-data
+- data-visualization
+- data-context-extractor
+- build-dashboard
+- metrics-review
+- business-pulse
+
+Customer / Support / Sales
+- customer-research
+- customer-pulse
+- customer-pulse-check
+- customer-escalation
+- account-research
+- contact-research
+- crm-cleanup
+- crm-maintenance
+- compose-outreach
+- draft-response
+- email-sequence
+
+Legal / Compliance / Risk
+- contract-review
+- compliance-check
+- compliance-tracking
+- legal-risk-assessment
+- audit-support
+- privacy/security domain skills לפי הפרויקט
+
+Security / Trust / AppSec
+- auditing-* skills לפי cloud/provider
+- testing-for-broken-access-control
+- testing-for-sensitive-data-exposure
+- detecting-* skills לפי תחום
+- analyzing-* skills לפי incident/forensics
+- conducting-* skills רק כאשר מורשה ורלוונטי
+
+Content / Localization
+- content-creation
+- content-strategy
+- draft-content
+- brand-voice-enforcement
+- ux-copy
+- hebrew-content-writer אם קיים בפרויקט
+- i18n/rtl skills לפי שפה
+
+Calendar / Operations
+- capacity-plan
+- task-management
+- change-request
+- close-management
+- monday-brief
+- daily-briefing
+
+How to choose
+1. Start with the manager role.
+2. Add one operating/system skill.
+3. Add 3-5 domain skills.
+4. Add one safety/validation skill if the manager can affect risky areas.
+5. Do not add skills only because they exist.
+
+Good default for a new serious project
+- Chief of Staff: manager-os, deep-research-sync, decision-knowledge-ops, release-safety-gate, change-request, brief
+- Product: deep-research-sync, product-brainstorming, knowledge-synthesis, competitive-intelligence, business-pulse
+- Design: rebuild-mode, designops-gate, frontend-design, brand-review, design-system, accessibility-review
+- Tech: architecture, code-review, debug, deploy-checklist, release-safety-gate
+- KnowledgeOps: decision-knowledge-ops, knowledge-synthesis, documentation, brief, close-management
+- QA/Release: release-safety-gate, testing-strategy, accessibility-review, incident-response, code-review
+
+Full local inventory command
+Run from project root:
+python3 - <<'PY'
+from pathlib import Path
+roots=[Path('.agents/skills'), Path.home()/'.codex/skills/.system']
+seen=[]
+for root in roots:
+    if root.exists():
+        for p in sorted(root.iterdir()):
+            if p.is_dir() and (p/'SKILL.md').exists() and p.name not in seen:
+                seen.append(p.name)
+print(len(seen))
+print('\\n'.join(seen))
+PY

@@ -1,0 +1,52 @@
+UI Quality Reference Template
+
+מלא בפרויקט החדש:
+
+1. Brand tokens
+- primary:
+- secondary:
+- background:
+- card:
+- text:
+- muted:
+- border:
+- success:
+- warning:
+- danger:
+
+2. Screens the owner likes
+- screen/file/link:
+- what works:
+- what to reuse:
+- what not to copy blindly:
+
+3. Card hierarchy
+- Hero:
+- Feature card:
+- Info card:
+- Row item:
+
+4. CTA hierarchy
+- Primary:
+- Secondary:
+- Tertiary:
+- Destructive:
+
+5. Mobile rules
+- safe area:
+- bottom nav:
+- touch targets:
+- RTL/LTR:
+- Safari/iOS:
+
+6. Empty state standard
+- icon:
+- title:
+- subtitle:
+- next action:
+
+7. What the owner dislikes
+- 
+
+8. Design Definition of Done
+- 
