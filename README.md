@@ -31,6 +31,12 @@ All editable brand links live in:
 src/data/brandContent.js
 ```
 
+For Tal / collaborator editing, see:
+
+```text
+EDITING_GUIDE_FOR_TAL.md
+```
+
 Current contact values taken from the supplied business card:
 
 - WhatsApp / phone: `058-69-22222` (`https://wa.me/972586922222`)

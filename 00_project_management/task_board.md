@@ -37,6 +37,7 @@ Updated: 2026-05-25 Asia/Jerusalem
 | 2026-05-25 | Assigned managers across all project layers | `00_project_management/company_structure/project_manager_assignments.md`, `design/UI_REFERENCE.md`, `research/RESEARCH_LOG.tsv` |
 | 2026-05-25 | Locked project boundary so Hippie Films and Dogo stay separate | `AGENTS.md`, `current_project_state.json`, `task_board.md`, `decision_log.tsv`, `interaction_log.tsv` |
 | 2026-05-25 | Deployed GitHub Pages and generated permanent print QR | `exports/qr/Hippie-Films-PERMANENT-PRINT-QR.png`, `exports/qr/Hippie-Films-PERMANENT-PRINT-QR.svg` |
+| 2026-05-25 | Added collaborator editing guide for Tal | `EDITING_GUIDE_FOR_TAL.md`, `README.md` |
 
 ## Open Decisions
 
