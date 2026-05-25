@@ -17,6 +17,12 @@ npm run build
 
 The production output is generated in `dist/`, ready for Vercel, Netlify, or any static hosting provider.
 
+Live GitHub Pages URL:
+
+```text
+https://albenda.github.io/Hippie-Films/
+```
+
 ## Editing Links
 
 All editable brand links live in:
@@ -39,11 +45,21 @@ Missing information to fill later:
 
 ## Deploying
 
-1. Push this project to GitHub.
-2. Import the repo into Vercel or Netlify.
-3. Use the default build command: `npm run build`.
-4. Use the default output folder: `dist`.
-5. Deploy the page first.
+### GitHub Pages
+
+This repo is configured to deploy through GitHub Actions:
+
+```text
+.github/workflows/deploy.yml
+```
+
+The GitHub Pages source should be set to **GitHub Actions**.
+
+### Vercel / Netlify Alternative
+
+1. Import the repo into Vercel or Netlify.
+2. Use the default build command: `npm run build`.
+3. Use the default output folder: `dist`.
 
 ## Generating the QR
 
@@ -56,11 +72,30 @@ Missing information to fill later:
 7. Test the QR on multiple phones before printing.
 8. Use that QR on the physical card, sticker, poster, or Instagram story.
 
+Permanent print QR files have been generated for the live GitHub Pages URL:
+
+```text
+exports/qr/Hippie-Films-PERMANENT-PRINT-QR.png
+exports/qr/Hippie-Films-PERMANENT-PRINT-QR.svg
+```
+
+They point to:
+
+```text
+https://albenda.github.io/Hippie-Films/
+```
+
 The QR should point to this landing page, not directly to Instagram, so links can be updated later without reprinting the QR.
 
 ## Visual Asset
 
-The generated cinematic hero image is stored at:
+The generated realistic moon visual is stored at:
+
+```text
+public/realistic-moon.png
+```
+
+The older generated cinematic hero image is also kept at:
 
 ```text
 public/hippie-sanpaku-visual-world.png

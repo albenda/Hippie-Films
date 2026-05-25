@@ -6,6 +6,7 @@
     "domain": "creative visual brand QR landing page and mini portfolio",
     "active_source": "/Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Hippie Films",
     "canonical_repo": "https://github.com/albenda/Hippie-Films.git",
+    "live_url": "https://albenda.github.io/Hippie-Films/",
     "stage": "build",
     "primary_user": "QR visitors, creative clients, collaborators, and Tal"
   },
@@ -24,14 +25,20 @@
     "Project OS installed and customized for future agent work",
     "Manager system assigned to every project layer",
     "Restyle the landing page to match the supplied black/star/gold business card",
-    "Enable GitHub Pages for the pushed repository before generating the permanent print QR"
+    "Continue visual polish now that GitHub Pages and the permanent QR are working"
   ],
+  "release_status": {
+    "github_pages": "live",
+    "workflow_run": "https://github.com/albenda/Hippie-Films/actions/runs/26406242173",
+    "permanent_qr_png": "exports/qr/Hippie-Films-PERMANENT-PRINT-QR.png",
+    "permanent_qr_svg": "exports/qr/Hippie-Films-PERMANENT-PRINT-QR.svg",
+    "qr_target": "https://albenda.github.io/Hippie-Films/",
+    "validation": "Live URL returned 200; JS/CSS/moon assets returned 200; generated QR decoded to live URL."
+  },
   "critical_open_items": [
     "Confirm phone from supplied card is final: 058-69-22222",
     "Confirm email from supplied card is final: Hippiefilmspro@gmail.com",
     "Add final website / portfolio link if it exists",
-    "Generate real QR only after deployment URL is known",
-    "Enable GitHub Pages in https://github.com/albenda/Hippie-Films/settings/pages; latest Actions deploy fails until Pages is enabled",
     "Decide English only vs Hebrew + English",
     "Add final logo/profile image if available"
   ],
