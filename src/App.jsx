@@ -15,7 +15,7 @@ import {
   Sparkles,
   Youtube,
 } from 'lucide-react';
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from 'framer-motion';
+import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import { defaultLanguage, languages, localizedContent, sharedBrand } from './data/brandContent';
 
 const assetPath = (path) => `${import.meta.env.BASE_URL}${path}`;
@@ -40,13 +40,13 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-function StarField({ farStyle, nearStyle, streamStyle, coreStreamStyle, twinkleStyle, streamActive }) {
+function StarField({ farStyle, nearStyle, streamStyle, coreStreamStyle, twinkleStyle }) {
   return (
     <>
       <motion.div className="absolute inset-0 star-field" style={farStyle} />
       <motion.div className="absolute inset-0 star-field-near" style={nearStyle} />
-      <motion.div className={`absolute inset-0 star-stream ${streamActive ? 'stream-active' : 'stream-idle'}`} style={streamStyle} />
-      <motion.div className={`absolute inset-0 star-stream-core ${streamActive ? 'stream-active' : 'stream-idle'}`} style={coreStreamStyle} />
+      <motion.div className="absolute inset-0 star-stream" style={streamStyle} />
+      <motion.div className="absolute inset-0 star-stream-core" style={coreStreamStyle} />
       <motion.div className="absolute inset-0 twinkle-field" style={twinkleStyle} />
       <div className="absolute inset-0 film-grain opacity-55" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_8%,rgba(240,198,106,0.18),transparent_22rem),radial-gradient(circle_at_18%_72%,rgba(214,155,61,0.16),transparent_19rem),linear-gradient(180deg,rgba(3,3,2,0.18),#050402_88%)]" />
@@ -135,62 +135,38 @@ function LinkButton({ item, language, compact = false }) {
 function CinematicBackdrop() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
-  const [streamActive, setStreamActive] = useState(false);
+  const sceneProgress = scrollYProgress;
 
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on('change', (value) => {
-      setStreamActive((previous) => {
-        if (!previous && value > 0.012) {
-          return true;
-        }
+  const moonY = useTransform(sceneProgress, [0, 0.46, 1], [0, -210, -510]);
+  const moonX = useTransform(sceneProgress, [0, 1], [0, -118]);
+  const moonScale = useTransform(sceneProgress, [0, 0.56, 1], [1.08, 0.76, 0.42]);
+  const moonOpacity = useTransform(sceneProgress, [0, 0.7, 1], [0.96, 0.74, 0.52]);
 
-        if (previous && value < 0.003) {
-          return false;
-        }
-
-        return previous;
-      });
-    });
-
-    return unsubscribe;
-  }, [scrollYProgress]);
-
-  const sceneProgress = useSpring(scrollYProgress, {
-    stiffness: 92,
-    damping: 22,
-    mass: 0.24,
-  });
-
-  const moonY = useTransform(sceneProgress, [0, 0.42, 1], [0, -190, -460]);
-  const moonX = useTransform(sceneProgress, [0, 1], [0, -104]);
-  const moonScale = useTransform(sceneProgress, [0, 0.52, 1], [1.08, 0.78, 0.42]);
-  const moonOpacity = useTransform(sceneProgress, [0, 0.62, 1], [0.96, 0.78, 0.3]);
-
-  const farStarsY = useTransform(sceneProgress, [0, 1], [0, 190]);
+  const farStarsY = useTransform(sceneProgress, [0, 1], [0, 150]);
   const farStarsScale = useTransform(sceneProgress, [0, 1], [1, 1.16]);
-  const nearStarsY = useTransform(sceneProgress, [0, 1], [0, 710]);
-  const nearStarsScale = useTransform(sceneProgress, [0, 0.68, 1], [1, 0.7, 0.28]);
-  const nearStarsOpacity = useTransform(sceneProgress, [0, 0.58, 1], [0.62, 0.9, 0.12]);
-  const streamY = useTransform(sceneProgress, [0, 1], [0, 930]);
-  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.82, 0.62]);
-  const streamScaleX = useTransform(sceneProgress, [0, 0.74, 1], [1, 0.94, 0.79]);
-  const streamScaleY = useTransform(sceneProgress, [0, 0.55, 1], [1, 1.7, 2.6]);
-  const streamOpacity = useTransform(sceneProgress, [0, 0.24, 0.72, 1], [0.44, 0.72, 0.88, 0.75]);
-  const streamBlur = useTransform(sceneProgress, [0, 0.55, 1], [0, 0.18, 0.52]);
-  const streamFilter = useTransform(streamBlur, (value) => `blur(${value}px)`);
-  const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 980]);
-  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.8, 0.66]);
-  const coreStreamScaleX = useTransform(sceneProgress, [0, 0.74, 1], [1, 0.92, 0.72]);
-  const coreStreamScaleY = useTransform(sceneProgress, [0, 0.52, 1], [1, 1.9, 3]);
-  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.22, 0.68, 1], [0.36, 0.66, 0.9, 0.84]);
-  const coreStreamBlur = useTransform(sceneProgress, [0, 0.55, 1], [0, 0.24, 0.64]);
-  const coreStreamFilter = useTransform(coreStreamBlur, (value) => `blur(${value}px)`);
-  const twinkleOpacity = useTransform(sceneProgress, [0, 0.45, 1], [0.5, 0.92, 0.16]);
+  const nearStarsY = useTransform(sceneProgress, [0, 1], [0, 230]);
+  const nearStarsScale = useTransform(sceneProgress, [0, 0.7, 1], [1, 0.86, 0.68]);
+  const nearStarsOpacity = useTransform(sceneProgress, [0, 0.72, 1], [0.62, 0.9, 0.46]);
+  const streamY = useTransform(sceneProgress, [0, 1], [0, 118]);
+  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.9, 0.78]);
+  const streamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.9, 0.66]);
+  const streamScaleY = useTransform(sceneProgress, [0, 0.58, 1], [1, 1.68, 2.45]);
+  const streamOpacity = useTransform(sceneProgress, [0, 0.22, 0.72, 1], [0.3, 0.66, 0.88, 0.92]);
+  const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 148]);
+  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.88, 0.74]);
+  const coreStreamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.82, 0.54]);
+  const coreStreamScaleY = useTransform(sceneProgress, [0, 0.54, 1], [1, 1.86, 2.85]);
+  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.2, 0.68, 1], [0.22, 0.6, 0.92, 0.96]);
+  const twinkleOpacity = useTransform(sceneProgress, [0, 0.45, 1], [0.5, 0.92, 0.32]);
 
-  const lensOpacity = useTransform(sceneProgress, [0.03, 0.36, 0.86, 1], [0, 0.38, 0.86, 0.94]);
-  const lensY = useTransform(sceneProgress, [0.1, 1], [280, -18]);
-  const lensScale = useTransform(sceneProgress, [0.1, 0.72, 1], [0.52, 0.92, 1.12]);
+  const lensOpacity = useTransform(sceneProgress, [0.02, 0.34, 0.86, 1], [0.08, 0.4, 0.88, 0.96]);
+  const lensY = useTransform(sceneProgress, [0, 1], [280, -18]);
+  const lensScale = useTransform(sceneProgress, [0, 0.72, 1], [0.5, 0.92, 1.12]);
   const lensRotate = useTransform(sceneProgress, [0, 1], [0, 112]);
+  const lensReflectionX = useTransform(sceneProgress, [0, 1], [-18, 34]);
+  const lensReflectionY = useTransform(sceneProgress, [0, 1], [-8, 44]);
+  const lensReflectionScale = useTransform(sceneProgress, [0, 1], [0.94, 1.16]);
+  const lensReflectionOpacity = useTransform(sceneProgress, [0, 0.52, 1], [0.42, 0.74, 0.96]);
   const frameOpacity = useTransform(sceneProgress, [0, 0.42, 1], [0.16, 0.32, 0.58]);
 
   return (
@@ -204,7 +180,6 @@ function CinematicBackdrop() {
           scaleX: streamScaleX,
           scaleY: streamScaleY,
           opacity: streamOpacity,
-          filter: streamFilter,
         }}
         coreStreamStyle={{
           y: coreStreamY,
@@ -212,10 +187,8 @@ function CinematicBackdrop() {
           scaleX: coreStreamScaleX,
           scaleY: coreStreamScaleY,
           opacity: coreStreamOpacity,
-          filter: coreStreamFilter,
         }}
         twinkleStyle={{ opacity: twinkleOpacity }}
-        streamActive={streamActive}
       />
 
       <motion.div className="film-gate pointer-events-none absolute inset-3 z-[1] md:inset-6" style={{ opacity: frameOpacity }} />
@@ -242,7 +215,10 @@ function CinematicBackdrop() {
         <span className="lens-barrel" />
         <span className="lens-ring" />
         <span className="lens-glass" />
-        <span className="lens-reflection-stars" />
+        <motion.span
+          className="lens-reflection-stars"
+          style={{ x: lensReflectionX, y: lensReflectionY, scale: lensReflectionScale, opacity: lensReflectionOpacity }}
+        />
         <span className="lens-core" />
       </motion.div>
 
