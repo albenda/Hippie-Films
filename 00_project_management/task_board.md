@@ -8,7 +8,7 @@ Updated: 2026-05-25 Asia/Jerusalem
 |---|------|--------|------------------|-------|
 | P0-1 | Confirm phone/email from card and add website if needed | In progress | Owner / Contact | Current card data: 058-69-22222, Hippiefilmspro@gmail.com. Do not guess more data. |
 | P0-2 | Run final lint/build/browser QA | Partially done | Engineering / QA | `npm run lint`, `npm run build`, and local HTTP smoke test passed; visual browser QA still pending. |
-| P0-3 | Deploy before generating final QR | Not started | Owner / Release | QR must point to the final live landing page URL. |
+| P0-3 | Deploy before generating final QR | Blocked | Owner / Release | Code is pushed to `albenda/Hippie-Films`, but GitHub Pages is not enabled yet. Current public URL returns 404; do not generate print QR until it returns 200. |
 | P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Use supplied black/star/gold card as source of truth. |
 | P0-5 | Keep Hippie Films separated from Dogo | Done | KnowledgeOps / Engineering | Work must stay in the Hippie Films folder and `albenda/Hippie-Films`; Dogo is a separate project. |
 
