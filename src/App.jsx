@@ -40,13 +40,13 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-function StarField({ farStyle, nearStyle, streamStyle, coreStreamStyle, twinkleStyle }) {
+function StarField({ farStyle, nearStyle, streamStyle, coreStreamStyle, twinkleStyle, streamActive }) {
   return (
     <>
       <motion.div className="absolute inset-0 star-field" style={farStyle} />
       <motion.div className="absolute inset-0 star-field-near" style={nearStyle} />
-      <motion.div className="absolute inset-0 star-stream" style={streamStyle} />
-      <motion.div className="absolute inset-0 star-stream-core" style={coreStreamStyle} />
+      <motion.div className={`absolute inset-0 star-stream ${streamActive ? 'stream-active' : 'stream-idle'}`} style={streamStyle} />
+      <motion.div className={`absolute inset-0 star-stream-core ${streamActive ? 'stream-active' : 'stream-idle'}`} style={coreStreamStyle} />
       <motion.div className="absolute inset-0 twinkle-field" style={twinkleStyle} />
       <div className="absolute inset-0 film-grain opacity-55" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_8%,rgba(240,198,106,0.18),transparent_22rem),radial-gradient(circle_at_18%_72%,rgba(214,155,61,0.16),transparent_19rem),linear-gradient(180deg,rgba(3,3,2,0.18),#050402_88%)]" />
@@ -135,6 +135,16 @@ function LinkButton({ item, language, compact = false }) {
 function CinematicBackdrop() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
+  const [streamActive, setStreamActive] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = scrollYProgress.on('change', (value) => {
+      setStreamActive(value > 0.008);
+    });
+
+    return unsubscribe;
+  }, [scrollYProgress]);
+
   const sceneProgress = useSpring(scrollYProgress, {
     stiffness: 72,
     damping: 31,
@@ -151,15 +161,15 @@ function CinematicBackdrop() {
   const nearStarsY = useTransform(sceneProgress, [0, 1], [0, 710]);
   const nearStarsScale = useTransform(sceneProgress, [0, 0.68, 1], [1, 0.7, 0.28]);
   const nearStarsOpacity = useTransform(sceneProgress, [0, 0.58, 1], [0.62, 0.9, 0.12]);
-  const streamY = useTransform(sceneProgress, [0, 1], [0, 1080]);
-  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.74, 0.36]);
-  const streamOpacity = useTransform(sceneProgress, [0, 0.22, 0.7, 1], [0.46, 0.78, 0.92, 0.62]);
-  const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 1160]);
-  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.72, 0.42]);
-  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.18, 0.62, 1], [0.32, 0.62, 0.9, 0.78]);
+  const streamY = useTransform(sceneProgress, [0, 1], [0, 930]);
+  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.8, 0.56]);
+  const streamOpacity = useTransform(sceneProgress, [0, 0.22, 0.7, 1], [0.44, 0.76, 0.9, 0.72]);
+  const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 980]);
+  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.78, 0.6]);
+  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.18, 0.62, 1], [0.36, 0.68, 0.92, 0.84]);
   const twinkleOpacity = useTransform(sceneProgress, [0, 0.45, 1], [0.5, 0.92, 0.16]);
 
-  const lensOpacity = useTransform(sceneProgress, [0.1, 0.52, 0.92, 1], [0, 0.34, 0.86, 0.94]);
+  const lensOpacity = useTransform(sceneProgress, [0.04, 0.42, 0.9, 1], [0, 0.38, 0.86, 0.94]);
   const lensY = useTransform(sceneProgress, [0.1, 1], [280, -18]);
   const lensScale = useTransform(sceneProgress, [0.1, 0.72, 1], [0.52, 0.92, 1.12]);
   const lensRotate = useTransform(sceneProgress, [0, 1], [0, 112]);
@@ -173,6 +183,7 @@ function CinematicBackdrop() {
         streamStyle={{ y: streamY, scale: streamScale, opacity: streamOpacity }}
         coreStreamStyle={{ y: coreStreamY, scale: coreStreamScale, opacity: coreStreamOpacity }}
         twinkleStyle={{ opacity: twinkleOpacity }}
+        streamActive={streamActive}
       />
 
       <motion.div className="film-gate pointer-events-none absolute inset-3 z-[1] md:inset-6" style={{ opacity: frameOpacity }} />
