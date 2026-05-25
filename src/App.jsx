@@ -162,11 +162,19 @@ function CinematicBackdrop() {
   const nearStarsScale = useTransform(sceneProgress, [0, 0.68, 1], [1, 0.7, 0.28]);
   const nearStarsOpacity = useTransform(sceneProgress, [0, 0.58, 1], [0.62, 0.9, 0.12]);
   const streamY = useTransform(sceneProgress, [0, 1], [0, 930]);
-  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.8, 0.56]);
+  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.82, 0.62]);
+  const streamScaleX = useTransform(sceneProgress, [0, 0.6, 1], [1, 0.92, 0.84]);
+  const streamScaleY = useTransform(sceneProgress, [0, 0.32, 1], [1, 1.82, 2.85]);
   const streamOpacity = useTransform(sceneProgress, [0, 0.22, 0.7, 1], [0.44, 0.76, 0.9, 0.72]);
+  const streamBlur = useTransform(sceneProgress, [0, 0.3, 1], [0, 0.18, 0.5]);
+  const streamFilter = useTransform(streamBlur, (value) => `blur(${value.toFixed(3)}px)`);
   const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 980]);
-  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.78, 0.6]);
+  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.8, 0.66]);
+  const coreStreamScaleX = useTransform(sceneProgress, [0, 0.62, 1], [1, 0.9, 0.74]);
+  const coreStreamScaleY = useTransform(sceneProgress, [0, 0.28, 1], [1, 2.05, 3.25]);
   const coreStreamOpacity = useTransform(sceneProgress, [0, 0.18, 0.62, 1], [0.36, 0.68, 0.92, 0.84]);
+  const coreStreamBlur = useTransform(sceneProgress, [0, 0.32, 1], [0, 0.24, 0.62]);
+  const coreStreamFilter = useTransform(coreStreamBlur, (value) => `blur(${value.toFixed(3)}px)`);
   const twinkleOpacity = useTransform(sceneProgress, [0, 0.45, 1], [0.5, 0.92, 0.16]);
 
   const lensOpacity = useTransform(sceneProgress, [0.04, 0.42, 0.9, 1], [0, 0.38, 0.86, 0.94]);
@@ -180,8 +188,22 @@ function CinematicBackdrop() {
       <StarField
         farStyle={{ y: farStarsY, scale: farStarsScale }}
         nearStyle={{ y: nearStarsY, scale: nearStarsScale, opacity: nearStarsOpacity }}
-        streamStyle={{ y: streamY, scale: streamScale, opacity: streamOpacity }}
-        coreStreamStyle={{ y: coreStreamY, scale: coreStreamScale, opacity: coreStreamOpacity }}
+        streamStyle={{
+          y: streamY,
+          scale: streamScale,
+          scaleX: streamScaleX,
+          scaleY: streamScaleY,
+          opacity: streamOpacity,
+          filter: streamFilter,
+        }}
+        coreStreamStyle={{
+          y: coreStreamY,
+          scale: coreStreamScale,
+          scaleX: coreStreamScaleX,
+          scaleY: coreStreamScaleY,
+          opacity: coreStreamOpacity,
+          filter: coreStreamFilter,
+        }}
         twinkleStyle={{ opacity: twinkleOpacity }}
         streamActive={streamActive}
       />
