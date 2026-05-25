@@ -40,12 +40,13 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-function StarField({ farStyle, nearStyle, streamStyle, twinkleStyle }) {
+function StarField({ farStyle, nearStyle, streamStyle, coreStreamStyle, twinkleStyle }) {
   return (
     <>
       <motion.div className="absolute inset-0 star-field" style={farStyle} />
       <motion.div className="absolute inset-0 star-field-near" style={nearStyle} />
       <motion.div className="absolute inset-0 star-stream" style={streamStyle} />
+      <motion.div className="absolute inset-0 star-stream-core" style={coreStreamStyle} />
       <motion.div className="absolute inset-0 twinkle-field" style={twinkleStyle} />
       <div className="absolute inset-0 film-grain opacity-55" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_8%,rgba(240,198,106,0.18),transparent_22rem),radial-gradient(circle_at_18%_72%,rgba(214,155,61,0.16),transparent_19rem),linear-gradient(180deg,rgba(3,3,2,0.18),#050402_88%)]" />
@@ -123,8 +124,8 @@ function LinkButton({ item, language, compact = false }) {
         <Icon size={21} aria-hidden="true" />
       </span>
       <span className={`min-w-0 flex-1 ${align}`}>
-        <span className="block text-base font-semibold text-cream">{item.label}</span>
-        <span className="mt-1 block text-sm leading-5 text-[#d6c49a]">{item.description}</span>
+        <span className="link-title block text-base font-semibold text-cream">{item.label}</span>
+        <span className="link-description mt-1 block text-sm leading-5 text-[#d6c49a]">{item.description}</span>
       </span>
       <ArrowUpRight className="shrink-0 text-[#d6c49a] transition group-hover:text-[#f0c66a]" size={20} />
     </motion.a>
@@ -150,9 +151,12 @@ function CinematicBackdrop() {
   const nearStarsY = useTransform(sceneProgress, [0, 1], [0, 710]);
   const nearStarsScale = useTransform(sceneProgress, [0, 0.68, 1], [1, 0.7, 0.28]);
   const nearStarsOpacity = useTransform(sceneProgress, [0, 0.58, 1], [0.62, 0.9, 0.12]);
-  const streamY = useTransform(sceneProgress, [0, 1], [0, 980]);
-  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.66, 0.18]);
-  const streamOpacity = useTransform(sceneProgress, [0, 0.3, 0.82, 1], [0.22, 0.75, 0.95, 0.08]);
+  const streamY = useTransform(sceneProgress, [0, 1], [0, 1080]);
+  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.74, 0.36]);
+  const streamOpacity = useTransform(sceneProgress, [0, 0.22, 0.7, 1], [0.46, 0.78, 0.92, 0.62]);
+  const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 1160]);
+  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.72, 0.42]);
+  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.18, 0.62, 1], [0.32, 0.62, 0.9, 0.78]);
   const twinkleOpacity = useTransform(sceneProgress, [0, 0.45, 1], [0.5, 0.92, 0.16]);
 
   const lensOpacity = useTransform(sceneProgress, [0.1, 0.52, 0.92, 1], [0, 0.34, 0.86, 0.94]);
@@ -167,6 +171,7 @@ function CinematicBackdrop() {
         farStyle={{ y: farStarsY, scale: farStarsScale }}
         nearStyle={{ y: nearStarsY, scale: nearStarsScale, opacity: nearStarsOpacity }}
         streamStyle={{ y: streamY, scale: streamScale, opacity: streamOpacity }}
+        coreStreamStyle={{ y: coreStreamY, scale: coreStreamScale, opacity: coreStreamOpacity }}
         twinkleStyle={{ opacity: twinkleOpacity }}
       />
 
@@ -412,7 +417,7 @@ export default function App() {
     <main dir={languageMeta.dir} className="relative isolate min-h-screen overflow-hidden bg-[#050402] text-stone-100">
       <CinematicBackdrop />
       <LanguageToggle language={language} onLanguageChange={setLanguage} />
-      <div className="relative z-10">
+      <div className="relative z-10 readable-copy">
         <Hero content={content} />
         <ContactSection content={content} language={language} />
         <LinksSection content={content} language={language} />
