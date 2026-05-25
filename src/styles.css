@@ -91,7 +91,7 @@ a {
 .star-stream {
   pointer-events: none;
   will-change: transform, opacity;
-  transform-origin: 50% 100%;
+  transform-origin: 50% 0%;
   background-image:
     radial-gradient(circle at 46% 12%, rgba(255, 244, 210, 0.92) 0 1.1px, transparent 2.4px),
     radial-gradient(circle at 54% 21%, rgba(240, 198, 106, 0.86) 0 1.1px, transparent 2.4px),
@@ -123,7 +123,7 @@ a {
 .star-stream-core {
   pointer-events: none;
   will-change: transform, opacity;
-  transform-origin: 50% 100%;
+  transform-origin: 50% 0%;
   background-image:
     radial-gradient(circle at 48% 18%, rgba(255, 247, 222, 0.96) 0 1.4px, transparent 3px),
     radial-gradient(circle at 52% 30%, rgba(240, 198, 106, 0.92) 0 1.3px, transparent 2.9px),
