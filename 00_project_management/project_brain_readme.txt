@@ -28,6 +28,14 @@ PROJECT BRAIN PACK v1
 כי dogo-* מכיל הקשרים ספציפיים לאפליקציית Dogo.
 ה-project-* הם הגרסה הנקייה, כללית, שמתאימה לכל פרויקט.
 
+גבול חשוב בפרויקט הזה
+Hippie Films הוא פרויקט נפרד מ-Dogo. העובדה שתבנית המנהלים הגיעה מתיקיית תבניות שהייתה תחת Dogo לא הופכת את Dogo לחלק מהפרויקט.
+במשימות של Hippie Films עובדים רק בתוך:
+/Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Hippie Films
+ובריפו:
+https://github.com/albenda/Hippie-Films.git
+אין לקרוא, לערוך, להעביר, לפרוס או לארגן קבצי Dogo בזמן עבודה על Hippie Films, אלא אם הבעלים פותח משימה מפורשת על Dogo.
+
 איזה skill עושה מה
 
 project-owner-language-model

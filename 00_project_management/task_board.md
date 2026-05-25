@@ -10,6 +10,7 @@ Updated: 2026-05-25 Asia/Jerusalem
 | P0-2 | Run final lint/build/browser QA | Partially done | Engineering / QA | `npm run lint`, `npm run build`, and local HTTP smoke test passed; visual browser QA still pending. |
 | P0-3 | Deploy before generating final QR | Not started | Owner / Release | QR must point to the final live landing page URL. |
 | P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Use supplied black/star/gold card as source of truth. |
+| P0-5 | Keep Hippie Films separated from Dogo | Done | KnowledgeOps / Engineering | Work must stay in the Hippie Films folder and `albenda/Hippie-Films`; Dogo is a separate project. |
 
 ## P1 — Important / Near Term
 
@@ -34,6 +35,7 @@ Updated: 2026-05-25 Asia/Jerusalem
 | 2026-05-25 | Installed Project OS into the project | `AGENTS.md`, `.agents/skills/`, `.claude/agents/`, `00_project_management/` |
 | 2026-05-25 | Installed Project OS skills globally for Codex | `/Users/alonbendavid/.codex/skills/project-*` |
 | 2026-05-25 | Assigned managers across all project layers | `00_project_management/company_structure/project_manager_assignments.md`, `design/UI_REFERENCE.md`, `research/RESEARCH_LOG.tsv` |
+| 2026-05-25 | Locked project boundary so Hippie Films and Dogo stay separate | `AGENTS.md`, `current_project_state.json`, `task_board.md`, `decision_log.tsv`, `interaction_log.tsv` |
 
 ## Open Decisions
 

@@ -5,8 +5,19 @@
     "owner": "Tal Ben David",
     "domain": "creative visual brand QR landing page and mini portfolio",
     "active_source": "/Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Hippie Films",
+    "canonical_repo": "https://github.com/albenda/Hippie-Films.git",
     "stage": "build",
     "primary_user": "QR visitors, creative clients, collaborators, and Tal"
+  },
+  "project_boundary": {
+    "rule": "Hippie Films and Dogo are separate projects. Work for this project must stay inside the Hippie Films folder and albenda/Hippie-Films repository.",
+    "do_not_touch": [
+      "/Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Dogo",
+      "Dogo app code",
+      "Dogo business/legal/project documents",
+      "Dogo deployment or repository state"
+    ],
+    "template_note": "The Project OS package was copied from a management-template location under Dogo, but Dogo itself is not part of this project."
   },
   "current_focus": [
     "Production-ready mobile-first QR landing page for Hippie Films × Sanpaku",
@@ -24,6 +35,7 @@
   ],
   "hard_stops": [
     "Do not publish or deploy without explicit approval",
+    "Do not touch the separate Dogo project while working on Hippie Films",
     "Do not use HippieFilms.in, @hippiefilms.in, Indian phone numbers, Indian emails, or unrelated business details",
     "Do not replace or enrich contact data with guessed personal data",
     "Do not generate a final QR before the public URL exists"

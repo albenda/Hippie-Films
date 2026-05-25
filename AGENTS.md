@@ -9,6 +9,14 @@ Primary language: English now; Hebrew + English later if needed
 Timezone: Asia/Jerusalem  
 Active source/app/repo: /Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Hippie Films
 
+## Project Boundary
+
+- This project is only **Hippie Films × Sanpaku**.
+- Canonical local folder: `/Users/alonbendavid/Library/Mobile Documents/com~apple~CloudDocs/Hippie Films`.
+- Canonical GitHub repo: `https://github.com/albenda/Hippie-Films.git`.
+- **Dogo is a separate project. Do not read, edit, move, deploy, or organize Dogo files while working on Hippie Films unless the owner explicitly starts a Dogo-scoped task.**
+- The Project OS template originally came from a management-template folder that lived under Dogo. That template source does not make Dogo part of this project.
+
 ## Start Here
 
 Before meaningful work, read:
