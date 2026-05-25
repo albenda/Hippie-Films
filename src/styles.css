@@ -113,8 +113,8 @@ a {
     59% -280px,
     50% -340px,
     center;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 8%, rgba(0, 0, 0, 1) 95%, transparent 100%);
-  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 8%, rgba(0, 0, 0, 1) 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 7%, rgba(0, 0, 0, 1) 100%);
+  mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 7%, rgba(0, 0, 0, 1) 100%);
   filter: blur(0px);
   mix-blend-mode: screen;
   animation: none;
@@ -145,8 +145,8 @@ a {
     51% -380px,
     50% -470px,
     center;
-  -webkit-mask-image: radial-gradient(ellipse at 50% 132%, rgba(0, 0, 0, 1) 0 52%, rgba(0, 0, 0, 0.96) 72%, transparent 96%);
-  mask-image: radial-gradient(ellipse at 50% 132%, rgba(0, 0, 0, 1) 0 52%, rgba(0, 0, 0, 0.96) 72%, transparent 96%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 138%, rgba(0, 0, 0, 1) 0 58%, rgba(0, 0, 0, 0.96) 82%, transparent 100%);
+  mask-image: radial-gradient(ellipse at 50% 138%, rgba(0, 0, 0, 1) 0 58%, rgba(0, 0, 0, 0.96) 82%, transparent 100%);
   filter: blur(0px) drop-shadow(0 0 8px rgba(240, 198, 106, 0.24));
   mix-blend-mode: screen;
   animation: none;

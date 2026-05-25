@@ -152,21 +152,21 @@ function CinematicBackdrop() {
   const nearStarsY = useTransform(sceneProgress, [0, 1], [0, 760]);
   const nearStarsScale = useTransform(sceneProgress, [0, 0.7, 1], [1, 0.82, 0.34]);
   const nearStarsOpacity = useTransform(sceneProgress, [0, 0.72, 1], [0.62, 0.9, 0.22]);
-  const streamY = useTransform(sceneProgress, [0, 1], [0, 980]);
-  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.8, 0.42]);
-  const streamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.9, 0.62]);
-  const streamScaleY = useTransform(sceneProgress, [0, 0.58, 1], [1, 1.7, 3.1]);
-  const streamOpacity = useTransform(sceneProgress, [0, 0.18, 0.68, 1], [0.3, 0.72, 0.94, 0.84]);
-  const coreStreamY = useTransform(sceneProgress, [0, 1], [0, 1120]);
-  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.74, 0.34]);
-  const coreStreamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.8, 0.46]);
-  const coreStreamScaleY = useTransform(sceneProgress, [0, 0.54, 1], [1, 2.1, 3.7]);
-  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.16, 0.62, 1], [0.22, 0.72, 0.96, 0.88]);
+  const streamY = useTransform(sceneProgress, [0, 0.44, 1], [0, 420, 1320]);
+  const streamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.8, 0.32]);
+  const streamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.9, 0.56]);
+  const streamScaleY = useTransform(sceneProgress, [0, 0.58, 1], [1, 1.7, 3.35]);
+  const streamOpacity = useTransform(sceneProgress, [0, 0.18, 0.82, 1], [0.3, 0.72, 0.95, 0.92]);
+  const coreStreamY = useTransform(sceneProgress, [0, 0.44, 1], [0, 520, 1480]);
+  const coreStreamScale = useTransform(sceneProgress, [0, 0.72, 1], [1, 0.74, 0.26]);
+  const coreStreamScaleX = useTransform(sceneProgress, [0, 0.76, 1], [1, 0.8, 0.4]);
+  const coreStreamScaleY = useTransform(sceneProgress, [0, 0.54, 1], [1, 2.1, 4]);
+  const coreStreamOpacity = useTransform(sceneProgress, [0, 0.16, 0.78, 1], [0.22, 0.72, 0.98, 0.94]);
   const twinkleOpacity = useTransform(sceneProgress, [0, 0.45, 1], [0.5, 0.92, 0.32]);
 
-  const lensOpacity = useTransform(sceneProgress, [0.02, 0.28, 0.84, 1], [0.1, 0.5, 0.9, 0.98]);
-  const lensY = useTransform(sceneProgress, [0, 1], [340, -8]);
-  const lensScale = useTransform(sceneProgress, [0, 0.72, 1], [0.48, 0.96, 1.2]);
+  const lensOpacity = useTransform(sceneProgress, [0.02, 0.24, 0.84, 1], [0.12, 0.58, 0.92, 1]);
+  const lensY = useTransform(sceneProgress, [0, 1], [360, -80]);
+  const lensScale = useTransform(sceneProgress, [0, 0.72, 1], [0.48, 0.98, 1.26]);
   const lensRotate = useTransform(sceneProgress, [0, 1], [0, 112]);
   const lensReflectionX = useTransform(sceneProgress, [0, 1], [-18, 34]);
   const lensReflectionY = useTransform(sceneProgress, [0, 1], [-8, 44]);
@@ -214,7 +214,7 @@ function CinematicBackdrop() {
 
       <div className="cinema-depth-fade absolute inset-x-0 bottom-0 z-[3] h-[74%]" />
       <motion.div
-        className="lens-pull pointer-events-none absolute inset-x-0 bottom-[-14rem] z-[4] mx-auto h-[32rem] w-[32rem] rounded-full md:bottom-[-22rem] md:h-[52rem] md:w-[52rem]"
+        className="lens-pull pointer-events-none absolute inset-x-0 bottom-[-11rem] z-[4] mx-auto h-[32rem] w-[32rem] rounded-full md:bottom-[-18rem] md:h-[52rem] md:w-[52rem]"
         style={{ opacity: lensOpacity, y: lensY, scale: lensScale, rotate: lensRotate }}
       >
         <span className="lens-barrel" />
