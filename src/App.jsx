@@ -40,16 +40,52 @@ const fadeUp = {
   visible: { opacity: 1, y: 0 },
 };
 
-function StarField({ farStyle, nearStyle, streamStyle, coreStreamStyle, twinkleStyle }) {
+const signatureStarbursts = [
+  { left: '6%', top: '22%', size: 9, glow: 'soft', delay: -0.2 },
+  { left: '14%', top: '66%', size: 12, glow: 'warm', delay: -1.4 },
+  { left: '18%', top: '14%', size: 28, glow: 'bright', delay: -2.1 },
+  { left: '22%', top: '72%', size: 22, glow: 'warm', delay: -0.8 },
+  { left: '26%', top: '86%', size: 12, glow: 'soft', delay: -2.6 },
+  { left: '38%', top: '39%', size: 16, glow: 'soft', delay: -1.8 },
+  { left: '46%', top: '56%', size: 20, glow: 'warm', delay: -0.6 },
+  { left: '58%', top: '6%', size: 8, glow: 'warm', delay: -2.8 },
+  { left: '61%', top: '62%', size: 8, glow: 'soft', delay: -1.1 },
+  { left: '68%', top: '47%', size: 17, glow: 'warm', delay: -2.4 },
+  { left: '72%', top: '8%', size: 7, glow: 'soft', delay: -0.4 },
+  { left: '75%', top: '22%', size: 28, glow: 'bright', delay: -1.6 },
+  { left: '82%', top: '75%', size: 24, glow: 'bright', delay: -2.2 },
+  { left: '88%', top: '13%', size: 14, glow: 'soft', delay: -0.9 },
+  { left: '92%', top: '31%', size: 12, glow: 'soft', delay: -1.9 },
+  { left: '93%', top: '54%', size: 26, glow: 'bright', delay: -0.3 },
+  { left: '12%', top: '76%', size: 18, glow: 'warm', delay: -2.5 },
+  { left: '84%', top: '92%', size: 24, glow: 'bright', delay: -1.2 },
+];
+
+function StarField({ farStyle, nearStyle, burstStyle, streamStyle, coreStreamStyle, twinkleStyle }) {
   return (
     <>
       <motion.div className="absolute inset-0 star-field" style={farStyle} />
       <motion.div className="absolute inset-0 star-field-near" style={nearStyle} />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_8%,rgba(240,198,106,0.10),transparent_22rem),radial-gradient(circle_at_18%_72%,rgba(214,155,61,0.09),transparent_19rem),linear-gradient(180deg,rgba(3,3,2,0.10),rgba(5,4,2,0.74)_92%)]" />
+      <motion.div className="absolute inset-0 star-burst-field" style={burstStyle}>
+        {signatureStarbursts.map((star) => (
+          <span
+            key={`${star.left}-${star.top}-${star.size}`}
+            className={`signature-starburst ${star.glow}`}
+            style={{
+              left: star.left,
+              top: star.top,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              animationDelay: `${star.delay}s`,
+            }}
+          />
+        ))}
+      </motion.div>
       <motion.div className="absolute inset-0 star-stream" style={streamStyle} />
       <motion.div className="absolute inset-0 star-stream-core" style={coreStreamStyle} />
       <motion.div className="absolute inset-0 twinkle-field" style={twinkleStyle} />
       <div className="absolute inset-0 film-grain opacity-55" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_52%_8%,rgba(240,198,106,0.18),transparent_22rem),radial-gradient(circle_at_18%_72%,rgba(214,155,61,0.16),transparent_19rem),linear-gradient(180deg,rgba(3,3,2,0.18),#050402_88%)]" />
     </>
   );
 }
@@ -158,6 +194,9 @@ function CinematicBackdrop() {
   const nearStarsY = useTransform(starProgress, [0, 1], [0, 290]);
   const nearStarsScale = useTransform(starProgress, [0, 0.7, 1], [1, 0.88, 0.7]);
   const nearStarsOpacity = useTransform(starProgress, [0, 0.72, 1], [0.62, 0.9, 0.52]);
+  const burstStarsY = useTransform(starProgress, [0, 1], [0, 245]);
+  const burstStarsScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.92, 0.76]);
+  const burstStarsOpacity = useTransform(starProgress, [0, 0.78, 1], [0.88, 0.94, 0.62]);
   const streamY = useTransform(starProgress, [0, 1], [0, 190]);
   const streamScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.92, 0.8]);
   const streamScaleX = useTransform(starProgress, [0, 0.76, 1], [1, 0.9, 0.68]);
@@ -185,6 +224,7 @@ function CinematicBackdrop() {
       <StarField
         farStyle={{ y: farStarsY, scale: farStarsScale }}
         nearStyle={{ y: nearStarsY, scale: nearStarsScale, opacity: nearStarsOpacity }}
+        burstStyle={{ y: burstStarsY, scale: burstStarsScale, opacity: burstStarsOpacity }}
         streamStyle={{
           y: streamY,
           scale: streamScale,
