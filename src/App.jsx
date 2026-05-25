@@ -41,24 +41,81 @@ const fadeUp = {
 };
 
 const signatureStarbursts = [
-  { left: '6%', top: '22%', size: 9, glow: 'soft', delay: -0.2 },
-  { left: '14%', top: '66%', size: 12, glow: 'warm', delay: -1.4 },
-  { left: '18%', top: '14%', size: 28, glow: 'bright', delay: -2.1 },
-  { left: '22%', top: '72%', size: 22, glow: 'warm', delay: -0.8 },
-  { left: '26%', top: '86%', size: 12, glow: 'soft', delay: -2.6 },
-  { left: '38%', top: '39%', size: 16, glow: 'soft', delay: -1.8 },
-  { left: '46%', top: '56%', size: 20, glow: 'warm', delay: -0.6 },
-  { left: '58%', top: '6%', size: 8, glow: 'warm', delay: -2.8 },
-  { left: '61%', top: '62%', size: 8, glow: 'soft', delay: -1.1 },
-  { left: '68%', top: '47%', size: 17, glow: 'warm', delay: -2.4 },
-  { left: '72%', top: '8%', size: 7, glow: 'soft', delay: -0.4 },
-  { left: '75%', top: '22%', size: 28, glow: 'bright', delay: -1.6 },
-  { left: '82%', top: '75%', size: 24, glow: 'bright', delay: -2.2 },
-  { left: '88%', top: '13%', size: 14, glow: 'soft', delay: -0.9 },
-  { left: '92%', top: '31%', size: 12, glow: 'soft', delay: -1.9 },
-  { left: '93%', top: '54%', size: 26, glow: 'bright', delay: -0.3 },
-  { left: '12%', top: '76%', size: 18, glow: 'warm', delay: -2.5 },
-  { left: '84%', top: '92%', size: 24, glow: 'bright', delay: -1.2 },
+  { left: '5%', top: '23%', size: 5, glow: 'soft', delay: -0.2 },
+  { left: '8%', top: '58%', size: 4, glow: 'warm', delay: -2.6 },
+  { left: '11%', top: '71%', size: 6, glow: 'soft', delay: -1.6 },
+  { left: '14%', top: '66%', size: 8, glow: 'warm', delay: -1.4 },
+  { left: '17%', top: '15%', size: 9, glow: 'bright', delay: -2.1 },
+  { left: '20%', top: '86%', size: 7, glow: 'soft', delay: -3.2 },
+  { left: '23%', top: '72%', size: 8, glow: 'warm', delay: -0.8 },
+  { left: '27%', top: '61%', size: 4, glow: 'soft', delay: -2.9 },
+  { left: '30%', top: '93%', size: 6, glow: 'warm', delay: -1.9 },
+  { left: '34%', top: '35%', size: 5, glow: 'soft', delay: -3.6 },
+  { left: '38%', top: '39%', size: 7, glow: 'soft', delay: -1.8 },
+  { left: '41%', top: '70%', size: 5, glow: 'warm', delay: -0.7 },
+  { left: '46%', top: '56%', size: 8, glow: 'warm', delay: -0.6 },
+  { left: '48%', top: '81%', size: 4, glow: 'soft', delay: -2.4 },
+  { left: '51%', top: '48%', size: 5, glow: 'soft', delay: -3.1 },
+  { left: '55%', top: '72%', size: 6, glow: 'warm', delay: -1.2 },
+  { left: '58%', top: '6%', size: 5, glow: 'warm', delay: -2.8 },
+  { left: '61%', top: '62%', size: 5, glow: 'soft', delay: -1.1 },
+  { left: '64%', top: '83%', size: 4, glow: 'soft', delay: -3.4 },
+  { left: '68%', top: '47%', size: 7, glow: 'warm', delay: -2.4 },
+  { left: '71%', top: '9%', size: 5, glow: 'soft', delay: -0.4 },
+  { left: '74%', top: '22%', size: 9, glow: 'bright', delay: -1.6 },
+  { left: '76%', top: '64%', size: 4, glow: 'soft', delay: -3.7 },
+  { left: '79%', top: '88%', size: 6, glow: 'warm', delay: -2.3 },
+  { left: '82%', top: '75%', size: 8, glow: 'bright', delay: -2.2 },
+  { left: '85%', top: '45%', size: 5, glow: 'warm', delay: -0.5 },
+  { left: '88%', top: '13%', size: 6, glow: 'soft', delay: -0.9 },
+  { left: '91%', top: '31%', size: 6, glow: 'soft', delay: -1.9 },
+  { left: '93%', top: '54%', size: 9, glow: 'bright', delay: -0.3 },
+  { left: '96%', top: '80%', size: 4, glow: 'warm', delay: -3.5 },
+  { left: '12%', top: '76%', size: 7, glow: 'warm', delay: -2.5 },
+  { left: '18%', top: '39%', size: 4, glow: 'soft', delay: -3.9 },
+  { left: '33%', top: '12%', size: 5, glow: 'soft', delay: -1.3 },
+  { left: '57%', top: '31%', size: 4, glow: 'warm', delay: -2.7 },
+  { left: '69%', top: '92%', size: 5, glow: 'soft', delay: -3.3 },
+  { left: '84%', top: '92%', size: 8, glow: 'bright', delay: -1.2 },
+];
+
+const circularTwinkles = [
+  { left: '7%', top: '12%', size: 2, tone: 'white', delay: -0.4, duration: 5.8 },
+  { left: '13%', top: '28%', size: 1.5, tone: 'gold', delay: -1.8, duration: 6.7 },
+  { left: '18%', top: '52%', size: 2.5, tone: 'white', delay: -3.1, duration: 7.2 },
+  { left: '21%', top: '18%', size: 1.7, tone: 'gold', delay: -0.9, duration: 6.2 },
+  { left: '24%', top: '79%', size: 2.2, tone: 'white', delay: -2.6, duration: 7.6 },
+  { left: '28%', top: '9%', size: 1.6, tone: 'white', delay: -4.1, duration: 6.9 },
+  { left: '31%', top: '44%', size: 2.6, tone: 'gold', delay: -1.5, duration: 7.8 },
+  { left: '34%', top: '67%', size: 1.8, tone: 'white', delay: -3.7, duration: 6.5 },
+  { left: '39%', top: '23%', size: 2.1, tone: 'gold', delay: -2.2, duration: 7.1 },
+  { left: '43%', top: '88%', size: 1.5, tone: 'white', delay: -0.7, duration: 6.4 },
+  { left: '47%', top: '15%', size: 2.4, tone: 'white', delay: -3.4, duration: 7.5 },
+  { left: '51%', top: '37%', size: 1.8, tone: 'gold', delay: -1.2, duration: 6.1 },
+  { left: '54%', top: '69%', size: 2.6, tone: 'white', delay: -4.3, duration: 8 },
+  { left: '59%', top: '25%', size: 1.6, tone: 'gold', delay: -2.9, duration: 6.8 },
+  { left: '63%', top: '81%', size: 2.3, tone: 'white', delay: -0.5, duration: 7.4 },
+  { left: '67%', top: '12%', size: 2, tone: 'white', delay: -3.8, duration: 6.6 },
+  { left: '71%', top: '51%', size: 1.7, tone: 'gold', delay: -1.7, duration: 7.7 },
+  { left: '75%', top: '34%', size: 2.5, tone: 'white', delay: -4.5, duration: 6.3 },
+  { left: '79%', top: '73%', size: 1.5, tone: 'gold', delay: -2.1, duration: 7 },
+  { left: '84%', top: '19%', size: 2.2, tone: 'white', delay: -0.8, duration: 7.9 },
+  { left: '88%', top: '58%', size: 1.8, tone: 'white', delay: -3.5, duration: 6.2 },
+  { left: '92%', top: '42%', size: 2.7, tone: 'gold', delay: -1, duration: 7.6 },
+  { left: '95%', top: '87%', size: 1.6, tone: 'white', delay: -4.2, duration: 6.9 },
+  { left: '10%', top: '92%', size: 2.4, tone: 'gold', delay: -2.4, duration: 7.3 },
+  { left: '6%', top: '76%', size: 1.7, tone: 'white', delay: -3.9, duration: 7.4 },
+  { left: '16%', top: '84%', size: 2.2, tone: 'gold', delay: -1.1, duration: 6.8 },
+  { left: '26%', top: '32%', size: 1.6, tone: 'white', delay: -4.6, duration: 7.1 },
+  { left: '36%', top: '54%', size: 2.4, tone: 'gold', delay: -2.8, duration: 7.9 },
+  { left: '45%', top: '61%', size: 1.7, tone: 'white', delay: -0.3, duration: 6.6 },
+  { left: '56%', top: '91%', size: 2.1, tone: 'gold', delay: -3.3, duration: 7.5 },
+  { left: '62%', top: '43%', size: 1.5, tone: 'white', delay: -1.9, duration: 6.4 },
+  { left: '69%', top: '66%', size: 2.3, tone: 'white', delay: -4.8, duration: 7.7 },
+  { left: '78%', top: '7%', size: 1.8, tone: 'gold', delay: -2.5, duration: 7.2 },
+  { left: '86%', top: '82%', size: 2.5, tone: 'white', delay: -0.6, duration: 8.1 },
+  { left: '90%', top: '23%', size: 1.6, tone: 'gold', delay: -3.6, duration: 6.7 },
+  { left: '97%', top: '63%', size: 2.1, tone: 'white', delay: -1.4, duration: 7 },
 ];
 
 function StarField({ farStyle, nearStyle, burstStyle, streamStyle, coreStreamStyle, twinkleStyle }) {
@@ -78,6 +135,22 @@ function StarField({ farStyle, nearStyle, burstStyle, streamStyle, coreStreamSty
               width: `${star.size}px`,
               height: `${star.size}px`,
               animationDelay: `${star.delay}s`,
+            }}
+          />
+        ))}
+      </motion.div>
+      <motion.div className="absolute inset-0 circular-twinkle-field" style={twinkleStyle}>
+        {circularTwinkles.map((star) => (
+          <span
+            key={`${star.left}-${star.top}-${star.size}`}
+            className={`circular-twinkle ${star.tone}`}
+            style={{
+              left: star.left,
+              top: star.top,
+              width: `${star.size}px`,
+              height: `${star.size}px`,
+              animationDelay: `${star.delay}s`,
+              animationDuration: `${star.duration}s`,
             }}
           />
         ))}
@@ -194,20 +267,20 @@ function CinematicBackdrop() {
   const nearStarsY = useTransform(starProgress, [0, 1], [0, 290]);
   const nearStarsScale = useTransform(starProgress, [0, 0.7, 1], [1, 0.88, 0.7]);
   const nearStarsOpacity = useTransform(starProgress, [0, 0.72, 1], [0.62, 0.9, 0.52]);
-  const burstStarsY = useTransform(starProgress, [0, 1], [0, 245]);
-  const burstStarsScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.92, 0.76]);
-  const burstStarsOpacity = useTransform(starProgress, [0, 0.78, 1], [0.88, 0.94, 0.62]);
+  const burstStarsY = useTransform(starProgress, [0, 1], [0, 210]);
+  const burstStarsScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.95, 0.84]);
+  const burstStarsOpacity = useTransform(starProgress, [0, 0.78, 1], [0.5, 0.7, 0.46]);
   const streamY = useTransform(starProgress, [0, 1], [0, 190]);
   const streamScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.92, 0.8]);
   const streamScaleX = useTransform(starProgress, [0, 0.76, 1], [1, 0.9, 0.68]);
-  const streamScaleY = useTransform(starProgress, [0, 0.58, 1], [1, 1.74, 2.55]);
-  const streamOpacity = useTransform(starProgress, [0, 0.18, 0.82, 1], [0.3, 0.72, 0.96, 0.94]);
+  const streamScaleY = useTransform(starProgress, [0, 0.58, 1], [1, 1.18, 1.42]);
+  const streamOpacity = useTransform(starProgress, [0, 0.18, 0.82, 1], [0.16, 0.34, 0.48, 0.42]);
   const coreStreamY = useTransform(starProgress, [0, 1], [0, 230]);
   const coreStreamScale = useTransform(starProgress, [0, 0.72, 1], [1, 0.9, 0.76]);
   const coreStreamScaleX = useTransform(starProgress, [0, 0.76, 1], [1, 0.82, 0.56]);
-  const coreStreamScaleY = useTransform(starProgress, [0, 0.54, 1], [1, 1.94, 2.95]);
-  const coreStreamOpacity = useTransform(starProgress, [0, 0.16, 0.78, 1], [0.22, 0.72, 0.98, 0.97]);
-  const twinkleOpacity = useTransform(starProgress, [0, 0.45, 1], [0.5, 0.92, 0.38]);
+  const coreStreamScaleY = useTransform(starProgress, [0, 0.54, 1], [1, 1.24, 1.54]);
+  const coreStreamOpacity = useTransform(starProgress, [0, 0.16, 0.78, 1], [0.1, 0.26, 0.42, 0.34]);
+  const twinkleOpacity = useTransform(starProgress, [0, 0.45, 1], [0.68, 0.96, 0.62]);
 
   const lensOpacity = useTransform(sceneProgress, [0.02, 0.24, 0.84, 1], [0.12, 0.58, 0.92, 1]);
   const lensY = useTransform(sceneProgress, [0, 1], [360, -80]);
@@ -217,6 +290,9 @@ function CinematicBackdrop() {
   const lensReflectionY = useTransform(sceneProgress, [0, 1], [-8, 44]);
   const lensReflectionScale = useTransform(sceneProgress, [0, 1], [0.94, 1.16]);
   const lensReflectionOpacity = useTransform(sceneProgress, [0, 0.52, 1], [0.42, 0.74, 0.96]);
+  const lensMoonReflectionX = useTransform(sceneProgress, [0, 1], [-28, 18]);
+  const lensMoonReflectionY = useTransform(sceneProgress, [0, 1], [-30, 24]);
+  const lensMoonReflectionOpacity = useTransform(sceneProgress, [0, 0.5, 1], [0.18, 0.34, 0.24]);
   const frameOpacity = useTransform(sceneProgress, [0, 0.42, 1], [0.16, 0.32, 0.58]);
 
   return (
@@ -266,6 +342,10 @@ function CinematicBackdrop() {
         <span className="lens-barrel" />
         <span className="lens-ring" />
         <span className="lens-glass" />
+        <motion.span
+          className="lens-reflection-moon"
+          style={{ x: lensMoonReflectionX, y: lensMoonReflectionY, opacity: lensMoonReflectionOpacity }}
+        />
         <motion.span
           className="lens-reflection-stars"
           style={{ x: lensReflectionX, y: lensReflectionY, scale: lensReflectionScale, opacity: lensReflectionOpacity }}

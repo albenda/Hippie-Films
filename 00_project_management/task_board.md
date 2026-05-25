@@ -1,6 +1,6 @@
 # Hippie Films × Sanpaku — Master Task Board
 
-Updated: 2026-05-25 Asia/Jerusalem
+Updated: 2026-05-26 Asia/Jerusalem
 
 ## P0 — Critical / Launch Blocking
 
@@ -9,7 +9,7 @@ Updated: 2026-05-25 Asia/Jerusalem
 | P0-1 | Confirm phone/email from card and add website if needed | In progress | Owner / Contact | Current card data: 058-69-22222, Hippiefilmspro@gmail.com. Do not guess more data. |
 | P0-2 | Run final lint/build/browser QA | Partially done | Engineering / QA | `npm run lint`, `npm run build`, local HTTP smoke test, live asset checks, and QR decode passed; visual browser QA still pending. |
 | P0-3 | Deploy before generating final QR | Done | Owner / Release | GitHub Pages is live at `https://albenda.github.io/Hippie-Films/`; permanent print QR files were generated and decoded successfully. |
-| P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Use supplied black/star/gold card as source of truth. |
+| P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Current pass: smaller doubled star glints, circular twinkles, and subtle moon reflection in the lens. |
 | P0-5 | Keep Hippie Films separated from Dogo | Done | KnowledgeOps / Engineering | Work must stay in the Hippie Films folder and `albenda/Hippie-Films`; Dogo is a separate project. |
 
 ## P1 — Important / Near Term
@@ -38,6 +38,7 @@ Updated: 2026-05-25 Asia/Jerusalem
 | 2026-05-25 | Locked project boundary so Hippie Films and Dogo stay separate | `AGENTS.md`, `current_project_state.json`, `task_board.md`, `decision_log.tsv`, `interaction_log.tsv` |
 | 2026-05-25 | Deployed GitHub Pages and generated permanent print QR | `exports/qr/Hippie-Films-PERMANENT-PRINT-QR.png`, `exports/qr/Hippie-Films-PERMANENT-PRINT-QR.svg` |
 | 2026-05-25 | Added collaborator editing guide for Tal | `EDITING_GUIDE_FOR_TAL.md`, `README.md` |
+| 2026-05-26 | Tuned cinematic starfield to use smaller doubled glints, round twinkles and a subtle moon reflection in the camera lens | `src/App.jsx`, `src/styles.css` |
 
 ## Open Decisions
 

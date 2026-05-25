@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-25 Asia/Jerusalem",
+  "updated_at": "2026-05-26 Asia/Jerusalem",
   "project": {
     "name": "Hippie Films × Sanpaku",
     "owner": "Tal Ben David",
@@ -25,7 +25,8 @@
     "Project OS installed and customized for future agent work",
     "Manager system assigned to every project layer",
     "Restyle the landing page to match the supplied black/star/gold business card",
-    "Continue visual polish now that GitHub Pages and the permanent QR are working"
+    "Continue visual polish now that GitHub Pages and the permanent QR are working",
+    "Latest visual pass reduces oversized starbursts, increases small circular twinkles, and adds a subtle moon reflection inside the camera lens"
   ],
   "release_status": {
     "github_pages": "live",
