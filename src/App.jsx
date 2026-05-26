@@ -292,7 +292,8 @@ function CinematicBackdrop() {
   const lensReflectionOpacity = useTransform(sceneProgress, [0, 0.52, 1], [0.42, 0.74, 0.96]);
   const lensMoonReflectionX = useTransform(sceneProgress, [0, 1], [-28, 18]);
   const lensMoonReflectionY = useTransform(sceneProgress, [0, 1], [-30, 24]);
-  const lensMoonReflectionOpacity = useTransform(sceneProgress, [0, 0.5, 1], [0.18, 0.34, 0.24]);
+  const lensMoonReflectionScale = useTransform(sceneProgress, [0, 1], [0.84, 1.04]);
+  const lensMoonReflectionOpacity = useTransform(sceneProgress, [0, 0.5, 1], [0.42, 0.72, 0.56]);
   const frameOpacity = useTransform(sceneProgress, [0, 0.42, 1], [0.16, 0.32, 0.58]);
 
   return (
@@ -344,13 +345,19 @@ function CinematicBackdrop() {
         <span className="lens-glass" />
         <motion.span
           className="lens-reflection-moon"
-          style={{ x: lensMoonReflectionX, y: lensMoonReflectionY, opacity: lensMoonReflectionOpacity }}
+          style={{ x: lensMoonReflectionX, y: lensMoonReflectionY, scale: lensMoonReflectionScale, opacity: lensMoonReflectionOpacity }}
         />
         <motion.span
           className="lens-reflection-stars"
           style={{ x: lensReflectionX, y: lensReflectionY, scale: lensReflectionScale, opacity: lensReflectionOpacity }}
         />
         <span className="lens-core" />
+        <motion.img
+          src={assetPath('realistic-moon.png')}
+          alt=""
+          className="lens-reflection-moon-image lens-reflection-moon-image-front"
+          style={{ x: lensMoonReflectionX, y: lensMoonReflectionY, scale: lensMoonReflectionScale, opacity: lensMoonReflectionOpacity }}
+        />
       </motion.div>
 
       <motion.div className="cinematic-vignette pointer-events-none absolute inset-0 z-[12]" style={{ opacity: frameOpacity }} />

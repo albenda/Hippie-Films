@@ -9,7 +9,7 @@ Updated: 2026-05-26 Asia/Jerusalem
 | P0-1 | Confirm phone/email from card and add website if needed | In progress | Owner / Contact | Current card data: 058-69-22222, Hippiefilmspro@gmail.com. Do not guess more data. |
 | P0-2 | Run final lint/build/browser QA | Partially done | Engineering / QA | `npm run lint`, `npm run build`, local HTTP smoke test, live asset checks, and QR decode passed; visual browser QA still pending. |
 | P0-3 | Deploy before generating final QR | Done | Owner / Release | GitHub Pages is live at `https://albenda.github.io/Hippie-Films/`; permanent print QR files were generated and decoded successfully. |
-| P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Current pass: stronger small star glints with brighter circular flashes and subtle moon reflection in the lens. |
+| P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Current pass: stronger small star glints, brighter circular flashes, and a clearer moon reflection in the camera lens. |
 | P0-5 | Keep Hippie Films separated from Dogo | Done | KnowledgeOps / Engineering | Work must stay in the Hippie Films folder and `albenda/Hippie-Films`; Dogo is a separate project. |
 
 ## P1 — Important / Near Term
@@ -40,6 +40,7 @@ Updated: 2026-05-26 Asia/Jerusalem
 | 2026-05-25 | Added collaborator editing guide for Tal | `EDITING_GUIDE_FOR_TAL.md`, `README.md` |
 | 2026-05-26 | Tuned cinematic starfield to use smaller doubled glints, round twinkles and a subtle moon reflection in the camera lens | `src/App.jsx`, `src/styles.css` |
 | 2026-05-26 | Increased star sparkle strength with slightly larger glints and short flash bursts | `src/App.jsx`, `src/styles.css` |
+| 2026-05-26 | Made the moon reflection inside the camera lens clearer while keeping it glass-like | `src/App.jsx`, `src/styles.css` |
 
 ## Open Decisions
 
