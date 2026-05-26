@@ -95,7 +95,7 @@ a {
   will-change: transform, opacity;
   backface-visibility: hidden;
   transform-origin: 50% 100%;
-  filter: drop-shadow(0 0 6px rgba(240, 198, 106, 0.16));
+  filter: drop-shadow(0 0 9px rgba(240, 198, 106, 0.24));
   mix-blend-mode: screen;
 }
 
@@ -104,38 +104,38 @@ a {
   display: block;
   border-radius: 999px;
   background:
-    radial-gradient(circle, rgba(255, 255, 255, 1) 0 13%, rgba(255, 238, 188, 0.86) 14% 28%, rgba(240, 198, 106, 0.38) 29% 46%, transparent 68%);
+    radial-gradient(circle, rgba(255, 255, 255, 1) 0 14%, rgba(255, 238, 188, 0.98) 15% 30%, rgba(240, 198, 106, 0.5) 31% 50%, transparent 70%);
   box-shadow:
-    0 0 5px rgba(255, 244, 210, 0.74),
-    0 0 14px rgba(240, 198, 106, 0.26);
-  opacity: 0.66;
+    0 0 8px rgba(255, 244, 210, 0.88),
+    0 0 22px rgba(240, 198, 106, 0.38);
+  opacity: 0.78;
   transform: translate(-50%, -50%);
-  animation: signatureStarPulse 6.4s ease-in-out infinite;
+  animation: signatureStarPulse 5.9s ease-in-out infinite;
 }
 
 .signature-starburst::before,
 .signature-starburst::after {
   position: absolute;
   inset: 50% auto auto 50%;
-  width: 240%;
+  width: 285%;
   height: 1px;
   content: "";
-  background: linear-gradient(90deg, transparent, rgba(255, 244, 210, 0.72), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 244, 210, 0.86), transparent);
   transform: translate(-50%, -50%);
 }
 
 .signature-starburst::after {
   width: 1px;
-  height: 240%;
-  background: linear-gradient(180deg, transparent, rgba(255, 244, 210, 0.64), transparent);
+  height: 285%;
+  background: linear-gradient(180deg, transparent, rgba(255, 244, 210, 0.78), transparent);
 }
 
 .signature-starburst.bright::before {
-  width: 330%;
+  width: 390%;
 }
 
 .signature-starburst.bright::after {
-  height: 330%;
+  height: 390%;
 }
 
 .signature-starburst.warm {
@@ -143,7 +143,7 @@ a {
 }
 
 .signature-starburst.soft {
-  opacity: 0.52;
+  opacity: 0.64;
   filter: blur(0.05px);
 }
 
@@ -159,17 +159,30 @@ a {
   border-radius: 999px;
   background: rgba(255, 247, 222, 0.94);
   box-shadow:
-    0 0 4px rgba(255, 244, 210, 0.52),
-    0 0 10px rgba(240, 198, 106, 0.22);
-  transform: translate(-50%, -50%) scale(0.88);
+    0 0 6px rgba(255, 244, 210, 0.68),
+    0 0 16px rgba(240, 198, 106, 0.3);
+  transform: translate(-50%, -50%) scale(1.02);
   animation: circularTwinkle ease-in-out infinite;
+}
+
+.circular-twinkle::after {
+  position: absolute;
+  inset: -6px;
+  content: "";
+  border-radius: inherit;
+  background: radial-gradient(circle, rgba(255, 244, 210, 0.52), rgba(240, 198, 106, 0.2) 38%, transparent 68%);
+  opacity: 0;
+  transform: scale(0.6);
+  animation: circularSparkFlash ease-in-out infinite;
+  animation-duration: inherit;
+  animation-delay: inherit;
 }
 
 .circular-twinkle.gold {
   background: rgba(240, 198, 106, 0.92);
   box-shadow:
-    0 0 5px rgba(240, 198, 106, 0.5),
-    0 0 14px rgba(240, 198, 106, 0.22);
+    0 0 7px rgba(240, 198, 106, 0.68),
+    0 0 20px rgba(240, 198, 106, 0.32);
 }
 
 .circular-twinkle.white {
@@ -555,34 +568,90 @@ a {
 @keyframes signatureStarPulse {
   0%,
   100% {
-    opacity: 0.42;
-    transform: translate(-50%, -50%) scale(0.9) rotate(0deg);
+    opacity: 0.5;
+    transform: translate(-50%, -50%) scale(0.96) rotate(0deg);
+  }
+  11% {
+    opacity: 0.92;
+    transform: translate(-50%, -50%) scale(1.14) rotate(0.8deg);
+    filter: brightness(1.45);
+  }
+  15% {
+    opacity: 0.55;
+    transform: translate(-50%, -50%) scale(0.98) rotate(-0.3deg);
+    filter: brightness(1);
   }
   45% {
-    opacity: 0.78;
-    transform: translate(-50%, -50%) scale(1.04) rotate(0.8deg);
+    opacity: 0.98;
+    transform: translate(-50%, -50%) scale(1.12) rotate(0.8deg);
+    filter: brightness(1.55);
   }
-  68% {
-    opacity: 0.52;
-    transform: translate(-50%, -50%) scale(0.96) rotate(-0.5deg);
+  49% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1) rotate(-0.5deg);
+    filter: brightness(1.08);
+  }
+  72% {
+    opacity: 0.78;
+    transform: translate(-50%, -50%) scale(1.06) rotate(-0.4deg);
+    filter: brightness(1.24);
   }
 }
 
 @keyframes circularTwinkle {
   0%,
   100% {
-    opacity: 0.22;
-    transform: translate(-50%, -50%) scale(0.72);
+    opacity: 0.28;
+    transform: translate(-50%, -50%) scale(0.84);
     filter: blur(0);
   }
-  42% {
-    opacity: 0.9;
-    transform: translate(-50%, -50%) scale(1.18);
-    filter: blur(0.05px);
+  34% {
+    opacity: 0.58;
+    transform: translate(-50%, -50%) scale(1.08);
   }
-  64% {
-    opacity: 0.48;
+  39% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.45);
+    filter: blur(0.03px) brightness(1.7);
+  }
+  42% {
+    opacity: 0.38;
     transform: translate(-50%, -50%) scale(0.92);
+    filter: blur(0);
+  }
+  56% {
+    opacity: 0.88;
+    transform: translate(-50%, -50%) scale(1.24);
+    filter: brightness(1.35);
+  }
+  61% {
+    opacity: 0.44;
+    transform: translate(-50%, -50%) scale(0.98);
+    filter: brightness(1);
+  }
+}
+
+@keyframes circularSparkFlash {
+  0%,
+  32%,
+  43%,
+  54%,
+  64%,
+  100% {
+    opacity: 0;
+    transform: scale(0.55);
+  }
+  38% {
+    opacity: 0.72;
+    transform: scale(1.65);
+  }
+  40% {
+    opacity: 0.18;
+    transform: scale(2.3);
+  }
+  57% {
+    opacity: 0.46;
+    transform: scale(1.55);
   }
 }
 
@@ -659,6 +728,7 @@ a {
   .star-stream-core,
   .signature-starburst,
   .circular-twinkle,
+  .circular-twinkle::after,
   .twinkle-field,
   .lens-reflection-stars {
     animation: none;
