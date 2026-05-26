@@ -30,11 +30,11 @@
   ],
   "release_status": {
     "github_pages": "live",
-    "workflow_run": "https://github.com/albenda/Hippie-Films/actions/runs/26406242173",
+    "workflow_run": "https://github.com/albenda/Hippie-Films/actions/runs/26441918825",
     "permanent_qr_png": "exports/qr/Hippie-Films-PERMANENT-PRINT-QR.png",
     "permanent_qr_svg": "exports/qr/Hippie-Films-PERMANENT-PRINT-QR.svg",
     "qr_target": "https://albenda.github.io/Hippie-Films/",
-    "validation": "Live URL returned 200; JS/CSS/moon assets returned 200; generated QR decoded to live URL."
+    "validation": "Live URL returned 200; latest JS/CSS assets returned 200; generated QR decoded to live URL; latest Pages deploy succeeded for commit 4d8aed3."
   },
   "critical_open_items": [
     "Confirm phone from supplied card is final: 058-69-22222",

@@ -42,4 +42,4 @@ Actions: Reduced moon reflection size/opacity and repositioned it off-center tow
 Outputs: `src/App.jsx`, `src/styles.css`, `tmp/qa/moon-reflection-offset-mobile-v3.png`
 Validation: `npm run lint`, `npm run build`, and mobile Chrome headless screenshot QA passed.
 Decisions: No new decision record needed.
-Open: Commit, push, and verify GitHub Pages update.
+Open: None.
