@@ -35,3 +35,11 @@ Decisions:
 Open:
 
 Previous update:
+
+Latest update:
+Time: 2026-05-26T11:13:00+03:00
+Actions: Reduced moon reflection size/opacity and repositioned it off-center toward the upper-right visible lens area.
+Outputs: `src/App.jsx`, `src/styles.css`, `tmp/qa/moon-reflection-offset-mobile-v3.png`
+Validation: `npm run lint`, `npm run build`, and mobile Chrome headless screenshot QA passed.
+Decisions: No new decision record needed.
+Open: Commit, push, and verify GitHub Pages update.

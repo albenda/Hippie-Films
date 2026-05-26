@@ -290,10 +290,10 @@ function CinematicBackdrop() {
   const lensReflectionY = useTransform(sceneProgress, [0, 1], [-8, 44]);
   const lensReflectionScale = useTransform(sceneProgress, [0, 1], [0.94, 1.16]);
   const lensReflectionOpacity = useTransform(sceneProgress, [0, 0.52, 1], [0.42, 0.74, 0.96]);
-  const lensMoonReflectionX = useTransform(sceneProgress, [0, 1], [-28, 18]);
-  const lensMoonReflectionY = useTransform(sceneProgress, [0, 1], [-30, 24]);
-  const lensMoonReflectionScale = useTransform(sceneProgress, [0, 1], [0.84, 1.04]);
-  const lensMoonReflectionOpacity = useTransform(sceneProgress, [0, 0.5, 1], [0.42, 0.72, 0.56]);
+  const lensMoonReflectionX = useTransform(sceneProgress, [0, 1], [-4, 8]);
+  const lensMoonReflectionY = useTransform(sceneProgress, [0, 1], [-18, -4]);
+  const lensMoonReflectionScale = useTransform(sceneProgress, [0, 1], [0.56, 0.7]);
+  const lensMoonReflectionOpacity = useTransform(sceneProgress, [0, 0.5, 1], [0.18, 0.36, 0.26]);
   const frameOpacity = useTransform(sceneProgress, [0, 0.42, 1], [0.16, 0.32, 0.58]);
 
   return (
