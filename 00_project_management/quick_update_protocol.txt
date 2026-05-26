@@ -43,3 +43,11 @@ Outputs: `src/App.jsx`, `src/styles.css`, `tmp/qa/moon-reflection-offset-mobile-
 Validation: `npm run lint`, `npm run build`, and mobile Chrome headless screenshot QA passed.
 Decisions: No new decision record needed.
 Open: None.
+
+Latest update:
+Time: 2026-05-26T17:10:00+03:00
+Actions: Smoothed cinematic scroll by replacing heavy background-position animations with transform layers, softening scroll springs, preloading the moon, and reducing mobile repaint effects.
+Outputs: `src/App.jsx`, `src/styles.css`, `index.html`, `tmp/qa/perf-pass-v2-mobile-top.png`, `tmp/qa/perf-pass-v2-mobile-mid.png`, `tmp/qa/perf-pass-v2-mobile-lens.png`
+Validation: `npm run lint`, `npm run build`, mobile Chrome visual QA, and scroll smoothness smoke test passed.
+Decisions: No new decision record needed.
+Open: Commit, push, and verify GitHub Pages update.

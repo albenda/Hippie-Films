@@ -7,9 +7,9 @@ Updated: 2026-05-26 Asia/Jerusalem
 | # | Task | Status | Owner/Department | Notes |
 |---|------|--------|------------------|-------|
 | P0-1 | Confirm phone/email from card and add website if needed | In progress | Owner / Contact | Current card data: 058-69-22222, Hippiefilmspro@gmail.com. Do not guess more data. |
-| P0-2 | Run final lint/build/browser QA | Partially done | Engineering / QA | `npm run lint`, `npm run build`, local HTTP smoke test, live asset checks, QR decode, and mobile Chrome headless visual QA passed. |
+| P0-2 | Run final lint/build/browser QA | Partially done | Engineering / QA | `npm run lint`, `npm run build`, local HTTP smoke test, live asset checks, QR decode, mobile Chrome visual QA, and scroll smoothness smoke test passed. |
 | P0-3 | Deploy before generating final QR | Done | Owner / Release | GitHub Pages is live at `https://albenda.github.io/Hippie-Films/`; permanent print QR files were generated and decoded successfully. |
-| P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Current pass: stronger small star glints, brighter circular flashes, and a smaller off-center moon reflection in the camera lens. |
+| P0-4 | Finish card-matched visual restyle | In progress | Design / UX + Engineering | Current pass: same cinematic look, but smoother mobile scrolling via GPU-friendly star layers and lighter repaint effects. |
 | P0-5 | Keep Hippie Films separated from Dogo | Done | KnowledgeOps / Engineering | Work must stay in the Hippie Films folder and `albenda/Hippie-Films`; Dogo is a separate project. |
 
 ## P1 — Important / Near Term
@@ -42,6 +42,7 @@ Updated: 2026-05-26 Asia/Jerusalem
 | 2026-05-26 | Increased star sparkle strength with slightly larger glints and short flash bursts | `src/App.jsx`, `src/styles.css` |
 | 2026-05-26 | Made the moon reflection inside the camera lens clearer while keeping it glass-like | `src/App.jsx`, `src/styles.css` |
 | 2026-05-26 | Reduced the moon reflection and shifted it toward the upper-right of the camera lens | `src/App.jsx`, `src/styles.css` |
+| 2026-05-26 | Optimized cinematic background performance while preserving the star/moon/lens look | `src/App.jsx`, `src/styles.css`, `index.html` |
 
 ## Open Decisions
 

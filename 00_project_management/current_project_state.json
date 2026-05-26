@@ -26,7 +26,7 @@
     "Manager system assigned to every project layer",
     "Restyle the landing page to match the supplied black/star/gold business card",
     "Continue visual polish now that GitHub Pages and the permanent QR are working",
-    "Latest visual pass reduces oversized starbursts, increases small circular twinkles, strengthens sparkle flashes, and keeps the moon reflection smaller and off-center in the camera lens"
+    "Latest visual pass preserves the same star/moon/lens look while smoothing mobile scroll by replacing heavy background-position animation with transform-based layers and reducing mobile repaint effects"
   ],
   "release_status": {
     "github_pages": "live",
@@ -34,7 +34,7 @@
     "permanent_qr_png": "exports/qr/Hippie-Films-PERMANENT-PRINT-QR.png",
     "permanent_qr_svg": "exports/qr/Hippie-Films-PERMANENT-PRINT-QR.svg",
     "qr_target": "https://albenda.github.io/Hippie-Films/",
-    "validation": "Live URL returned 200; latest JS/CSS assets returned 200; generated QR decoded to live URL; latest Pages deploy succeeded for commit 4d8aed3."
+    "validation": "Live URL returned 200; latest JS/CSS assets returned 200; generated QR decoded to live URL; latest Pages deploy succeeded for commit 017e3d5. Local performance pass later validated lint/build and mobile Chrome scroll/screenshot QA."
   },
   "critical_open_items": [
     "Confirm phone from supplied card is final: 058-69-22222",

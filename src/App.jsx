@@ -245,16 +245,16 @@ function CinematicBackdrop() {
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll();
   const sceneProgress = useSpring(scrollYProgress, {
-    stiffness: 180,
-    damping: 34,
-    mass: 0.13,
-    restDelta: 0.0001,
+    stiffness: 150,
+    damping: 32,
+    mass: 0.16,
+    restDelta: 0.0006,
   });
   const starProgress = useSpring(scrollYProgress, {
-    stiffness: 320,
-    damping: 42,
-    mass: 0.08,
-    restDelta: 0.0001,
+    stiffness: 140,
+    damping: 34,
+    mass: 0.18,
+    restDelta: 0.0008,
   });
 
   const moonY = useTransform(sceneProgress, [0, 0.2, 0.58, 1], [0, -62, -230, -450]);
@@ -330,6 +330,8 @@ function CinematicBackdrop() {
           src={assetPath('realistic-moon.png')}
           alt=""
           className="moon-orbit w-full"
+          decoding="async"
+          fetchPriority="high"
           animate={prefersReducedMotion ? undefined : { x: [0, -8, 7, 0], rotate: [0, 0.42, -0.28, 0] }}
           transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
         />
@@ -356,6 +358,7 @@ function CinematicBackdrop() {
           src={assetPath('realistic-moon.png')}
           alt=""
           className="lens-reflection-moon-image lens-reflection-moon-image-front"
+          decoding="async"
           style={{ x: lensMoonReflectionX, y: lensMoonReflectionY, scale: lensMoonReflectionScale, opacity: lensMoonReflectionOpacity }}
         />
       </motion.div>

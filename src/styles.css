@@ -47,6 +47,18 @@ a {
   pointer-events: none;
   will-change: transform, opacity;
   backface-visibility: hidden;
+  contain: paint;
+  overflow: hidden;
+  transform: translateZ(0);
+  background: #050402;
+}
+
+.star-field::before {
+  position: absolute;
+  inset: -12%;
+  content: "";
+  will-change: transform;
+  transform: translate3d(-2%, -2%, 0) scale(1.04);
   background-image:
     radial-gradient(circle at 8% 12%, rgba(255, 255, 255, 0.92) 0 0.9px, transparent 1.8px),
     radial-gradient(circle at 22% 36%, rgba(255, 239, 191, 0.78) 0 1px, transparent 2px),
@@ -67,13 +79,25 @@ a {
     310px 310px,
     100% 100%,
     100% 100%;
-  animation: starDrift 64s linear infinite;
+  animation: starLayerDrift 72s linear infinite;
 }
 
 .star-field-near {
   pointer-events: none;
   will-change: transform, opacity;
   backface-visibility: hidden;
+  contain: paint;
+  overflow: hidden;
+  transform: translateZ(0);
+  mix-blend-mode: screen;
+}
+
+.star-field-near::before {
+  position: absolute;
+  inset: -14%;
+  content: "";
+  will-change: transform;
+  transform: translate3d(2%, -2%, 0) scale(1.05);
   background-image:
     radial-gradient(circle at 12% 18%, rgba(255, 247, 222, 0.8) 0 1.2px, transparent 2.8px),
     radial-gradient(circle at 22% 76%, rgba(240, 198, 106, 0.84) 0 1.4px, transparent 3.2px),
@@ -86,16 +110,15 @@ a {
     390px 390px,
     470px 470px,
     560px 560px;
-  animation: starDriftNear 44s linear infinite;
-  mix-blend-mode: screen;
+  animation: starNearLayerDrift 56s linear infinite;
 }
 
 .star-burst-field {
   pointer-events: none;
   will-change: transform, opacity;
   backface-visibility: hidden;
+  contain: paint;
   transform-origin: 50% 100%;
-  filter: drop-shadow(0 0 9px rgba(240, 198, 106, 0.24));
   mix-blend-mode: screen;
 }
 
@@ -150,6 +173,7 @@ a {
 .circular-twinkle-field {
   pointer-events: none;
   will-change: transform, opacity;
+  contain: paint;
   mix-blend-mode: screen;
 }
 
@@ -195,6 +219,17 @@ a {
   backface-visibility: hidden;
   transform: translateZ(0);
   transform-origin: 50% 100%;
+  contain: paint;
+  overflow: hidden;
+  background: transparent;
+}
+
+.star-stream::before {
+  position: absolute;
+  inset: -24% -8%;
+  content: "";
+  will-change: transform;
+  transform: translate3d(0, -14%, 0);
   background-image:
     radial-gradient(circle at 46% 12%, rgba(255, 244, 210, 0.82) 0 0.9px, transparent 2.2px),
     radial-gradient(circle at 54% 21%, rgba(240, 198, 106, 0.76) 0 1px, transparent 2.3px),
@@ -216,11 +251,13 @@ a {
     59% -280px,
     50% -340px,
     center;
+  animation: starStreamLayerFlow 34s linear infinite;
+}
+
+.star-stream {
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 7%, rgba(0, 0, 0, 1) 100%);
   mask-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.88) 7%, rgba(0, 0, 0, 1) 100%);
-  filter: blur(0px);
   mix-blend-mode: screen;
-  animation: starStreamFlow 32s linear infinite;
 }
 
 .star-stream-core {
@@ -229,6 +266,17 @@ a {
   backface-visibility: hidden;
   transform: translateZ(0);
   transform-origin: 50% 100%;
+  contain: paint;
+  overflow: hidden;
+  background: transparent;
+}
+
+.star-stream-core::before {
+  position: absolute;
+  inset: -24% -8%;
+  content: "";
+  will-change: transform;
+  transform: translate3d(0, -16%, 0);
   background-image:
     radial-gradient(circle at 48% 18%, rgba(255, 247, 222, 0.9) 0 1.1px, transparent 2.6px),
     radial-gradient(circle at 52% 30%, rgba(240, 198, 106, 0.86) 0 1.1px, transparent 2.6px),
@@ -250,17 +298,20 @@ a {
     51% -380px,
     50% -470px,
     center;
+  animation: starCoreLayerFlow 30s linear infinite;
+}
+
+.star-stream-core {
   -webkit-mask-image: radial-gradient(ellipse at 50% 138%, rgba(0, 0, 0, 1) 0 58%, rgba(0, 0, 0, 0.96) 82%, transparent 100%);
   mask-image: radial-gradient(ellipse at 50% 138%, rgba(0, 0, 0, 1) 0 58%, rgba(0, 0, 0, 0.96) 82%, transparent 100%);
-  filter: blur(0px) drop-shadow(0 0 8px rgba(240, 198, 106, 0.24));
   mix-blend-mode: screen;
-  animation: starStreamCoreFlow 26s linear infinite;
 }
 
 .twinkle-field {
   pointer-events: none;
   opacity: 0.72;
   will-change: opacity;
+  contain: paint;
   background-image:
     radial-gradient(circle at 13% 28%, rgba(255, 246, 218, 0.95) 0 1px, transparent 2px),
     radial-gradient(circle at 27% 68%, rgba(240, 198, 106, 0.9) 0 1px, transparent 2.5px),
@@ -360,14 +411,13 @@ a {
   will-change: transform;
   transform: translateZ(0);
   backface-visibility: hidden;
-  filter:
-    drop-shadow(0 0 22px rgba(240, 198, 106, 0.32))
-    drop-shadow(0 0 70px rgba(240, 198, 106, 0.18));
+  filter: drop-shadow(0 0 28px rgba(240, 198, 106, 0.24));
 }
 
 .lens-pull {
   display: block;
   will-change: transform, opacity;
+  contain: paint;
   transform-origin: center center;
   background:
     radial-gradient(circle, rgba(0, 0, 0, 0.98) 0 18%, rgba(255, 244, 210, 0.28) 18.7% 20%, rgba(0, 0, 0, 0.84) 20.6% 36%, rgba(240, 198, 106, 0.17) 37% 38%, rgba(0, 0, 0, 0.62) 39% 53%, transparent 68%),
@@ -537,60 +587,30 @@ a {
   0%,
   100% {
     opacity: 0.34;
-    filter: drop-shadow(0 0 0 rgba(240, 198, 106, 0));
   }
   45% {
     opacity: 0.88;
-    filter: drop-shadow(0 0 8px rgba(240, 198, 106, 0.45));
   }
   62% {
     opacity: 0.52;
   }
 }
 
-@keyframes starDrift {
+@keyframes starLayerDrift {
   from {
-    background-position:
-      0 0,
-      0 0,
-      0 0,
-      0 0,
-      0 0,
-      0 0,
-      0 0,
-      center,
-      center;
+    transform: translate3d(-2%, -2%, 0) scale(1.04);
   }
   to {
-    background-position:
-      220px 160px,
-      -310px 210px,
-      270px -190px,
-      -360px 240px,
-      420px 260px,
-      -290px -170px,
-      510px -300px,
-      center,
-      center;
+    transform: translate3d(2%, 2%, 0) scale(1.04);
   }
 }
 
-@keyframes starDriftNear {
+@keyframes starNearLayerDrift {
   from {
-    background-position:
-      0 0,
-      0 0,
-      0 0,
-      0 0,
-      0 0;
+    transform: translate3d(2%, -2%, 0) scale(1.05);
   }
   to {
-    background-position:
-      -280px 190px,
-      360px 280px,
-      -440px -240px,
-      510px 330px,
-      -610px 410px;
+    transform: translate3d(-2%, 2%, 0) scale(1.05);
   }
 }
 
@@ -603,27 +623,22 @@ a {
   11% {
     opacity: 0.92;
     transform: translate(-50%, -50%) scale(1.14) rotate(0.8deg);
-    filter: brightness(1.45);
   }
   15% {
     opacity: 0.55;
     transform: translate(-50%, -50%) scale(0.98) rotate(-0.3deg);
-    filter: brightness(1);
   }
   45% {
     opacity: 0.98;
     transform: translate(-50%, -50%) scale(1.12) rotate(0.8deg);
-    filter: brightness(1.55);
   }
   49% {
     opacity: 0.6;
     transform: translate(-50%, -50%) scale(1) rotate(-0.5deg);
-    filter: brightness(1.08);
   }
   72% {
     opacity: 0.78;
     transform: translate(-50%, -50%) scale(1.06) rotate(-0.4deg);
-    filter: brightness(1.24);
   }
 }
 
@@ -632,7 +647,6 @@ a {
   100% {
     opacity: 0.28;
     transform: translate(-50%, -50%) scale(0.84);
-    filter: blur(0);
   }
   34% {
     opacity: 0.58;
@@ -641,22 +655,18 @@ a {
   39% {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1.45);
-    filter: blur(0.03px) brightness(1.7);
   }
   42% {
     opacity: 0.38;
     transform: translate(-50%, -50%) scale(0.92);
-    filter: blur(0);
   }
   56% {
     opacity: 0.88;
     transform: translate(-50%, -50%) scale(1.24);
-    filter: brightness(1.35);
   }
   61% {
     opacity: 0.44;
     transform: translate(-50%, -50%) scale(0.98);
-    filter: brightness(1);
   }
 }
 
@@ -684,45 +694,21 @@ a {
   }
 }
 
-@keyframes starStreamFlow {
+@keyframes starStreamLayerFlow {
   from {
-    background-position:
-      40% -120px,
-      56% -170px,
-      45% -220px,
-      59% -280px,
-      50% -340px,
-      center;
+    transform: translate3d(0, -14%, 0);
   }
   to {
-    background-position:
-      40% 440px,
-      56% 650px,
-      45% 840px,
-      59% 1020px,
-      50% 1210px,
-      center;
+    transform: translate3d(0, 14%, 0);
   }
 }
 
-@keyframes starStreamCoreFlow {
+@keyframes starCoreLayerFlow {
   from {
-    background-position:
-      47% -120px,
-      53% -200px,
-      49% -290px,
-      51% -380px,
-      50% -470px,
-      center;
+    transform: translate3d(0, -16%, 0);
   }
   to {
-    background-position:
-      47% 420px,
-      53% 620px,
-      49% 820px,
-      51% 980px,
-      50% 1160px,
-      center;
+    transform: translate3d(0, 16%, 0);
   }
 }
 
@@ -752,15 +738,36 @@ a {
 
 @media (prefers-reduced-motion: reduce) {
   .star-field,
+  .star-field::before,
   .star-field-near,
+  .star-field-near::before,
   .star-stream,
+  .star-stream::before,
   .star-stream-core,
+  .star-stream-core::before,
   .signature-starburst,
   .circular-twinkle,
   .circular-twinkle::after,
   .twinkle-field,
   .lens-reflection-stars {
     animation: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .moon-atmosphere {
+    filter: blur(18px);
+    opacity: 0.78;
+  }
+
+  .moon-orbit {
+    filter: none;
+  }
+
+  .readable-copy .backdrop-blur,
+  .readable-copy .backdrop-blur-md {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
   }
 }
 
