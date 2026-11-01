@@ -1,0 +1,33 @@
+# Copy to .github/workflows/skill-checks.yml in any repo that contains skills.
+# Fails the PR if a skill scores < 70. Security blocks only with an LLM-verified scan
+# (add repo secret ANTHROPIC_API_KEY); pattern-only results are warnings, they are too noisy to gate on.
+name: Skill checks
+on:
+  pull_request:
+    paths: ["**/SKILL.md", "**/skills/**", ".claude/**", ".github/workflows/skill-checks.yml"]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install NVIDIA skill tools
+        run: |
+          uv tool install --python 3.13 git+https://github.com/NVIDIA/SkillEvaluator
+          uv tool install --python 3.13 git+https://github.com/NVIDIA/skillspector
+      - name: Audit every skill
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          LLM=--no-llm; [ -n "$ANTHROPIC_API_KEY" ] && { LLM=; export SKILLSPECTOR_PROVIDER=anthropic; }
+          fail=0
+          for d in $(find . -name SKILL.md -not -path './node_modules/*' -printf '%h\n' | sort -u); do
+            skillevaluator quality-check "$d" --min-score 70 -r cli || fail=1
+            skillspector scan "$d" $LLM --format json --output /tmp/s.json || true
+            v=$(python3 -c "import json;print(json.load(open('/tmp/s.json'))['risk_assessment']['recommendation'])")
+            echo "$d -> $v"; if [ "$v" = "DO_NOT_INSTALL" ]; then if [ -z "$LLM" ]; then fail=1; else echo "::warning::$d flagged (pattern-only, verify manually)"; fi; fi
+          done
+          exit $fail
