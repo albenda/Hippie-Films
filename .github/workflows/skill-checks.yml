@@ -4,7 +4,7 @@
 name: Skill checks
 on:
   pull_request:
-    paths: ["**/SKILL.md", "**/skills/**", ".claude/**"]
+    paths: ["**/SKILL.md", "**/skills/**", ".claude/**", ".github/workflows/skill-checks.yml"]
   workflow_dispatch:
 permissions:
   contents: read
